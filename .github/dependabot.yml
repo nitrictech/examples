@@ -1,0 +1,56 @@
+# To get started with Dependabot version updates, you'll need to specify which
+# package ecosystems to update and where the package manifests are located.
+# Please see the documentation for all configuration options:
+# https://docs.github.com/github/administering-a-repository/configuration-options-for-dependency-updates
+
+version: 2
+updates:
+  - package-ecosystem: "npm"
+    directory: "/v1/javascript-starter"
+    schedule:
+      interval: "daily"
+    versioning-strategy: increase
+    allow:
+      # Allow updates for nitric
+      - dependency-name: "@nitric/*"
+
+  - package-ecosystem: "npm"
+    directory: "/v1/typescript-starter"
+    schedule:
+      interval: "daily"
+    versioning-strategy: increase
+    allow:
+      # Allow updates for nitric
+      - dependency-name: "@nitric/*"
+
+  - package-ecosystem: "pip"
+    directory: "/v1/python-starter"
+    schedule:
+      interval: "daily"
+    versioning-strategy: increase
+    allow:
+      # Allow updates for nitric
+      - dependency-name: "nitric"
+
+  - package-ecosystem: "gomod"
+    directory: "/v1/golang-starter"
+    schedule:
+      interval: "daily"
+    allow:
+      - dependency-name: "github.com/nitrictech/go-sdk"
+
+  - package-ecosystem: "gradle"
+    directory: "/v1/java-starter"
+    schedule:
+      interval: "daily"
+    allow:
+      # Allow updates for nitric
+      - dependency-name: "com.github.nitrictech:jvm-sdk"
+
+  - package-ecosystem: "gradle"
+    directory: "/v1/kotlin-starter"
+    schedule:
+      interval: "daily"
+    allow:
+      # Allow updates for nitric
+      - dependency-name: "com.github.nitrictech:jvm-sdk"
