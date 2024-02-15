@@ -1,0 +1,17 @@
+{
+  "name": "javascript-starter",
+  "version": "1.0.0",
+  "description": "nitric javascript starter template",
+  "private": true,
+  "type": "module",
+  "dependencies": {
+    "@nitric/sdk": "1.0.0"
+  },
+  "devDependencies": {
+    "dotenv": "^16.4.4",
+    "nodemon": "^3.0.3"
+  },
+  "scripts": {
+    "dev:services": "nodemon -r dotenv/config"
+  }
+}
