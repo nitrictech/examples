@@ -9,3 +9,7 @@ templates:
     label: JavaScript - Starter
     desc: A simple REST API
     path: ./v1/javascript-starter
+  - name: py-starter
+    label: Python - Starter
+    desc: A simple REST API
+    path: ./v1/python-starter

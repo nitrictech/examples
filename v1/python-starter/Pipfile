@@ -7,7 +7,7 @@ name = "python starter"
 nitric = "==1.0.0"
 
 [scripts]
-dev = "watchmedo auto-restart -p '*.py' -R python index.py --"
+dev = "watchmedo auto-restart -p '*.py' -R python"
 
 [dev-packages]
 watchdog = "*"
