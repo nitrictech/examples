@@ -13,3 +13,7 @@ templates:
     label: Python - Starter
     desc: A simple REST API
     path: ./v1/python-starter
+  - name: dart-starter
+    label: Dart - Starter
+    desc: A simple REST API
+    path: ./v1/dart-starter
