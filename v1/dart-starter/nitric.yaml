@@ -1,0 +1,4 @@
+name: dart-starter
+services:
+  - match: services/*.dart
+    start: dart run --observe $SERVICE_PATH
