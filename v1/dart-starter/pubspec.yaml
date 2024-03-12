@@ -9,7 +9,6 @@ environment:
 # Add regular dependencies here.
 dependencies:
   nitric_sdk: ^1.0.0
-  # path: ^1.8.0
 
 dev_dependencies:
   lints: ^3.0.0
