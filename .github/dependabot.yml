@@ -32,6 +32,14 @@ updates:
       # Allow updates for nitric
       - dependency-name: "nitric"
 
+ -  package-ecosystem: "pub"
+    directory: "/v1/dart-starter"
+    schedule:
+      interval: "daily"
+    versioning-strategy: increase
+    allow:
+      - dependency-name: "nitric_sdk"
+
   - package-ecosystem: "gomod"
     directory: "/v1/golang-starter"
     schedule:
