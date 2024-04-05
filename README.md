@@ -8,6 +8,10 @@ When using the `nitric new` command to start a new project these templates are p
 
 > Want another language that isn't currently available? Chat to us on [Discord](https://nitric.io/chat).
 
+## Seeking more examples?
+
+Explore our collection of [example apps](https://github.com/nitrictech/example-apps).
+
 ## About Nitric
 
 [Nitric](https://nitric.io) is a framework for rapid development of cloud-native and serverless applications in many languages.
