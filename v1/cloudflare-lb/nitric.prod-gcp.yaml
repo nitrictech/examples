@@ -1,0 +1,3 @@
+provider: nitric/gcp@1.0.2
+gcp-project-id:
+region: us-west2

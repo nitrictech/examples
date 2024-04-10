@@ -1,0 +1,6 @@
+name: python
+services:
+    - match: services/*.py
+      runtime: ""
+      type: ""
+      start: pipenv run dev $SERVICE_PATH

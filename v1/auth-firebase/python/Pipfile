@@ -1,0 +1,14 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "python starter"
+
+[packages]
+nitric = "==1.0.2"
+firebase-admin = "*"
+
+[scripts]
+dev = "watchmedo auto-restart -p '*.py' -R python -- -u"
+
+[dev-packages]
+watchdog = "*"

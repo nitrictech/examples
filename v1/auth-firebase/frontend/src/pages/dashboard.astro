@@ -1,0 +1,35 @@
+---
+import { Logout } from "../components/auth/Logout";
+import FetchData from "../components/FetchData";
+import Layout from "@/layouts/Layout.astro";
+---
+
+<Layout title='Firebase Example'>
+  <!-- Loading Spinner -->
+  <div id='loading'>
+    <h1
+      class='mt-36 text-5xl font-extrabold tracking-tight text-white sm:text-[5rem] text-center'
+    >
+      Loading...
+    </h1>
+  </div>
+  <div class='flex-col items-center hidden' id='protected'>
+    <FetchData client:load />
+  </div>
+</Layout>
+
+<script>
+  import { auth } from "@/lib/firebase";
+  import { onAuthStateChanged } from "@firebase/auth";
+
+  window.addEventListener("DOMContentLoaded", (event) => {
+    document.getElementById("loading")!.style.display = "none";
+    onAuthStateChanged(auth, (user) => {
+      if (user) {
+        document.getElementById("protected")!.style.display = "flex";
+      } else {
+        window.location.href = "/";
+      }
+    });
+  });
+</script>

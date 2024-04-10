@@ -1,0 +1,6 @@
+name: typescript
+services:
+    - match: services/*.ts
+      runtime: ""
+      type: ""
+      start: npm run dev:services $SERVICE_PATH
