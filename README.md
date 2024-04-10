@@ -2,15 +2,15 @@
 
 ## Nitric Examples
 
-This is the Nitric Examples repository, it contains starter project templates in a variety of languages supported by the Nitric Framework.
+This repository serves as the Nitric Examples repository, housing starter example templates written in various languages supported by the Nitric Framework. Each example is designed to be deployed using Nitric for AWS, GCP, and Azure, or alternatively, can be run locally. The examples are organized within the [v1 directory](./v1/), which represents our latest version.
 
-When using the `nitric new` command to start a new project these templates are presented as options to build your app.
+> Note: Refer to the README of each project for setup instructions and more info as sometimes they are reliant on cloud services.
+
+## CLI Starter Templates
+
+When utilizing the `nitric new` command to initiate a new project, the available templates listed in the `cli-templates.yaml` file are presented as options for constructing your application.
 
 > Want another language that isn't currently available? Chat to us on [Discord](https://nitric.io/chat).
-
-## Seeking more examples?
-
-Explore our collection of [example apps](https://github.com/nitrictech/example-apps).
 
 ## About Nitric
 
