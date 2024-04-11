@@ -1,0 +1,10 @@
+name: test-http-wrapper
+services:
+  - match: src/main.ts
+    start: yarn start:dev
+    type: default
+    runtime: docker-wrapper
+runtimes:
+  docker-wrapper:
+    dockerfile: ./node.dockerfile
+    args: {}

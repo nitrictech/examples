@@ -1,0 +1,10 @@
+---
+import { GoogleOauth } from "@/components/auth/Google";
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout title='Firebase Example'>
+  <div class='flex min-h-screen flex-col items-center justify-center'>
+    <GoogleOauth client:load />
+  </div>
+</Layout>

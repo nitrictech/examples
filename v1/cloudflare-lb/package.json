@@ -1,0 +1,24 @@
+{
+  "name": "typescript-starter",
+  "version": "1.0.0",
+  "description": "nitric typescript starter template",
+  "main": "index.js",
+  "private": true,
+  "dependencies": {
+    "@nitric/sdk": "1.1.0"
+  },
+  "devDependencies": {
+    "@pulumi/aws": "^5.32.0",
+    "@pulumi/cloudflare": "^5.0.0",
+    "@pulumi/pulumi": "^3.58.0",
+    "dotenv": "^16.4.4",
+    "nodemon": "2.0.1",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.3.3",
+    "yaml": "^2.2.1"
+  },
+  "scripts": {
+    "deploy:lb": "ts-node ./infra/up.ts",
+    "destroy:lb": "ts-node ./infra/down.ts"
+  }
+}
