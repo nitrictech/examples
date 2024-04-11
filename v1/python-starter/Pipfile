@@ -4,7 +4,7 @@ verify_ssl = true
 name = "python starter"
 
 [packages]
-nitric = "==1.0.2"
+nitric = "==1.0.3"
 
 [scripts]
 dev = "watchmedo auto-restart -p '*.py' -R python -- -u"
