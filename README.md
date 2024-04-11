@@ -2,7 +2,9 @@
 
 ## Nitric Examples
 
-This repository serves as the Nitric Examples repository, housing starter example templates written in various languages supported by the Nitric Framework. Each example is designed to be deployed using Nitric for AWS, GCP, and Azure, or alternatively, can be run locally. The examples are organized within the [v1 directory](./v1/), which represents our latest version.
+This repository serves as the Nitric Examples repository, housing both starter templates for the languages supported by the Nitric Framework as well as a variety of example projects to show how Nitric can be used for different use cases. 
+
+Each example is designed to be deployed using Nitric for AWS, GCP, and Azure, or alternatively, can be run locally. The examples are organized within the [v1 directory](./v1/), which represents our latest version.
 
 > Note: Refer to the README of each project for setup instructions and more info as sometimes they are reliant on cloud services.
 
