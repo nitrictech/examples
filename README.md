@@ -1,6 +1,22 @@
-<p align="center"><a href="https://nitric.io" target="_blank"><img src="https://raw.githubusercontent.com/nitrictech/nitric/main/docs/assets/nitric-logo.svg" height="120"></a></p>
+<p align="center">
+  <a href="https://nitric.io">
+    <img src="https://raw.githubusercontent.com/nitrictech/nitric/main/docs/assets/nitric-logo.svg" width="120" alt="Nitric Logo"/>
+  </a>
+</p>
 
-## Nitric Examples
+<p align="center">
+  A fast & fun way to build portable cloud-native applications
+</p>
+
+<p align="center">
+  <img alt="GitHub release (latest SemVer)" src="https://img.shields.io/github/v/release/nitrictech/nitric?sort=semver" />
+  <a href="https://twitter.com/nitric_io">
+    <img alt="Twitter Follow" src="https://img.shields.io/twitter/follow/nitric_io?label=Follow&style=social" />
+  </a>
+  <a href="https://nitric.io/chat"><img alt="Discord" src="https://img.shields.io/discord/955259353043173427?label=discord" /></a>
+</p>
+
+# Nitric Examples
 
 This repository serves as the Nitric Examples repository, housing both starter templates for the languages supported by the Nitric Framework as well as a variety of example projects to show how Nitric can be used for different use cases.
 
