@@ -6,7 +6,7 @@ void main() {
   helloApi.get("/hello/:name", (ctx) async {
     final name = ctx.req.pathParams["name"]!;
 
-    ctx.resp.body = "Hello $name";
+    ctx.res.body = "Hello $name";
 
     return ctx;
   });
