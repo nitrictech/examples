@@ -62,6 +62,7 @@ When utilizing the `nitric new` command to initiate a new project, the available
 | [websockets](./v1/websockets/)                   | A basic websockets example                                                                          | APIs, Key Value Stores                                  |
 | [real-time-chat](./v1/realtime-chat-app/)        | A realtime chat using Websockets, Next.js, Nitric and Clerk Auth                                    | APIs, WebSockets, Frontend, Auth                        |
 | [scheduled-report](./v1/scheduled-report/)       | A scheduled report generated with Google Sheets and shared with Google Drive                        | APIs, Schedules                                         |
+| [apollo-server](./v1/apollo-server/)             | Simple GraphQL example using Apollo Server                                                          | APIs, HTTP                                              |
 
 ### Python
 
