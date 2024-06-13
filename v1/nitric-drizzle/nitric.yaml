@@ -1,0 +1,8 @@
+name: nitric-drizzle
+services:
+  - match: services/*.ts
+    runtime: ""
+    type: ""
+    start: npm run dev:services $SERVICE_PATH
+preview:
+  - sql-databases

@@ -1,0 +1,21 @@
+{
+  "name": "typescript-starter",
+  "version": "1.0.0",
+  "description": "nitric typescript starter template",
+  "private": true,
+  "dependencies": {
+    "@nitric/sdk": "^1.2.0",
+    "drizzle-orm": "^0.31.2",
+    "postgres": "^3.4.4"
+  },
+  "devDependencies": {
+    "dotenv": "^16.4.4",
+    "drizzle-kit": "^0.22.7",
+    "nodemon": "2.0.1",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.3.3"
+  },
+  "scripts": {
+    "dev:services": "nodemon -r dotenv/config"
+  }
+}
