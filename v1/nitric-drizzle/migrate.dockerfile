@@ -8,7 +8,7 @@ ENV NITRIC_DB_NAME=""
 COPY package*.json ./
 
 # Install the application's dependencies inside the Docker image
-RUN npm install
+RUN npm ci
 
 # Copy the rest of the application into the Docker image
 COPY . .
