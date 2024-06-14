@@ -56,6 +56,7 @@ When utilizing the `nitric new` command to initiate a new project, the available
 | [cloudflare-lb](./v1/cloudflare-lb/)             | Deploy a multi-cloud application with a cloudflare loadbalanced application                         | APIs, Multi-Cloud                                       |
 | [surveys-auth0](./v1/surveys-auth0/)             | A survey app with NextJS frontend with and without Auth0 integration to save and resume application | APIs, Topics, Key Value Stores, Storage, Auth, Frontend |
 | [nitric-drizzle](./v1/nitric-drizzle/)           | A PostgreSQL Database using Drizzle ORM deployed with AWS                                           | APIs, SQL Database                                      |
+| [nitric-prisma](./v1/nitric-prisma/)             | A PostgreSQL Database using Prisma ORM deployed with AWS                                            | APIs, SQL Database                                      |
 | [nitric-express](./v1/nitric-express/)           | A secure URL upload demonstrating usage with Nitric and Express framework                           | Existing API Frameworks, Storage                        |
 | [nitric-koa](./v1/nitric-koa/)                   | A secure URL upload demonstrating usage with Nitric and KOA framework                               | Existing API Frameworks, Storage                        |
 | [nitric-hono](./v1/nitric-hono/)                 | A secure URL upload demonstrating usage with Nitric and Hono                                        | Existing API Frameworks, Storage                        |
