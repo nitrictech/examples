@@ -1,4 +1,4 @@
-name: nitric-drizzle
+name: todo-app
 services:
   - match: services/*.ts
     runtime: ""
