@@ -10,6 +10,7 @@ import (
 func main() {
 	api, err := nitric.NewApi("main")
 	if err != nil {
+		fmt.Println(err)
 		return
 	}
 

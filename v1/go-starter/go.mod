@@ -1,4 +1,4 @@
-module github.com/nitrictech/templates/golang-starter
+module github.com/nitrictech/templates/go-starter
 
 go 1.21
 
