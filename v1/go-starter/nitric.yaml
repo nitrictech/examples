@@ -1,4 +1,4 @@
-name: golang-starter
+name: go-starter
 services:
   - match: services/*/*.go
     start: go run $SERVICE_PATH
