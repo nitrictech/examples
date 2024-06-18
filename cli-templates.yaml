@@ -17,3 +17,7 @@ templates:
     label: Dart - Starter
     desc: A simple REST API
     path: ./v1/dart-starter
+  - name: go-starter
+    label: Go - Starter
+    desc: A simple REST API
+    path: ./v1/go-starter
