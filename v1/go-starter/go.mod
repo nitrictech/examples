@@ -3,7 +3,8 @@ module github.com/nitrictech/templates/golang-starter
 go 1.21
 
 toolchain go1.21.4
-require github.com/nitrictech/go-sdk v0.9.0
+
+require github.com/nitrictech/go-sdk v1.0.0
 
 require (
 	github.com/golang/protobuf v1.5.3 // indirect
