@@ -1,0 +1,11 @@
+name: go-starter
+services:
+  - match: services/*
+    start: go run ./$SERVICE_PATH/...
+    runtime: go
+
+
+runtimes:
+  go: 
+    dockerfile: ./golang.dockerfile
+    args: {}

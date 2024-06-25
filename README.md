@@ -81,6 +81,12 @@ When utilizing the `nitric new` command to initiate a new project, the available
 | ---------------------------------- | ---------------- | -------- |
 | [dart-starter](./v1/dart-starter/) | REST API Starter | APIs     |
 
+### Go
+
+| Name                           | Description      | Features |
+| ------------------------------ | ---------------- | -------- |
+| [go-starter](./v1/go-starter/) | REST API Starter | APIs     |
+
 ## About Nitric
 
 [Nitric](https://nitric.io) is a framework for rapid development of cloud-native and serverless applications in many languages.
