@@ -4,11 +4,11 @@ go 1.21
 
 toolchain go1.21.4
 
-require github.com/nitrictech/go-sdk v1.0.1
+require github.com/nitrictech/go-sdk v1.0.2
 
 require (
 	github.com/missionMeteora/toolkit v0.0.0-20170713173850-88364e3ef8cc // indirect
-	github.com/nitrictech/nitric/core v0.0.0-20240614052744-71e6e05bc47e // indirect
+	github.com/nitrictech/nitric/core v0.0.0-20240626200036-1e794d9b6b07 // indirect
 	github.com/nitrictech/protoutils v0.0.0-20220321044654-02667a814cdf // indirect
 	golang.org/x/net v0.26.0 // indirect
 	golang.org/x/sys v0.21.0 // indirect
