@@ -13,3 +13,5 @@
 
 # 'nitric run' log directory
 .nitric/
+
+git.store
