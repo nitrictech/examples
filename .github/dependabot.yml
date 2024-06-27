@@ -41,7 +41,7 @@ updates:
       - dependency-name: "nitric_sdk"
 
   - package-ecosystem: "gomod"
-    directory: "/v1/golang-starter"
+    directory: "/v1/go-starter"
     schedule:
       interval: "daily"
     allow:
