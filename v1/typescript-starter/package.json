@@ -4,7 +4,7 @@
   "description": "nitric typescript starter template",
   "private": true,
   "dependencies": {
-    "@nitric/sdk": "^1.2.0"
+    "@nitric/sdk": "^1.2.1"
   },
   "devDependencies": {
     "dotenv": "^16.4.4",
