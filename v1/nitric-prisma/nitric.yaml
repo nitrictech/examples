@@ -1,4 +1,4 @@
-name: nitric-prisma-blah
+name: nitric-prisma-gcp-second
 services:
   - match: services/*.ts
     runtime: ""
