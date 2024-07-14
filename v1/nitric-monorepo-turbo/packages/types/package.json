@@ -1,0 +1,9 @@
+{
+  "name": "types",
+  "main": "./index.ts",
+  "version": "0.0.0",
+  "types": "./index.ts",
+  "devDependencies": {
+    "typescript": "^4.8.4"
+  }
+}

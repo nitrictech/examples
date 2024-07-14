@@ -1,0 +1,34 @@
+{
+  "name": "@repo/database",
+  "version": "1.0.0",
+  "exports": {
+    ".": "./src/index.ts"
+  },
+  "scripts": {
+    "db:migrate:deploy": "prisma migrate deploy",
+    "db:migrate:dev": "prisma migrate dev",
+    "db:push": "prisma db push",
+    "db:seed": "tsx src/seed.ts",
+    "dev": "tsup src/* --watch",
+    "generate": "drizzle-kit generate",
+    "lint": "eslint . --max-warnings 0",
+    "prebuild": "npm run generate",
+    "predev": "npm run generate",
+    "studio": "drizzle-kit studio"
+  },
+  "devDependencies": {
+    "@repo/eslint-config": "*",
+    "@repo/typescript-config": "*",
+    "drizzle-kit": "^0.23.0",
+    "eslint": "^8.57.0",
+    "rimraf": "^5.0.5",
+    "tsup": "^8.0.2",
+    "tsx": "^4.7.1",
+    "typescript": "^5.3.3"
+  },
+  "dependencies": {
+    "@nitric/sdk": "^1.2.1",
+    "drizzle-orm": "^0.32.0",
+    "postgres": "^3.4.4"
+  }
+}

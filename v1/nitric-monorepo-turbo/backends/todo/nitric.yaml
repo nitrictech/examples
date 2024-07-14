@@ -1,0 +1,15 @@
+name: todo-app
+services:
+  - match: services/*.ts
+    runtime: turbo
+    type: ""
+    start: npm run dev:services $SERVICE_PATH
+runtimes:
+  turbo:
+    # All services that specify the 'turbo' runtime will be built using this dockerfile
+    dockerfile: ./turbo.dockerfile
+    context: ../../
+    args:
+      TURBO_SCOPE: "todo-backend"
+preview:
+  - sql-databases
