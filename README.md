@@ -83,9 +83,10 @@ When utilizing the `nitric new` command to initiate a new project, the available
 
 ### Go
 
-| Name                           | Description      | Features |
-| ------------------------------ | ---------------- | -------- |
-| [go-starter](./v1/go-starter/) | REST API Starter | APIs     |
+| Name                                 | Description                | Features                       |
+| ------------------------------------ | -------------------------- | ------------------------------ |
+| [go-starter](./v1/go-starter/)       | REST API Starter           | APIs                           |
+| [url-shortener](./v1/url-shortener/) | URL Shortener with Pub/Sub | APIs, Topics, Key Value Stores |
 
 ## About Nitric
 
