@@ -6,7 +6,7 @@ services:
     start: yarn dev:services $SERVICE_PATH
 runtimes:
   custom:
-    # All services that specify the 'turbo' runtime will be built using this dockerfile
+    # All services that specify the 'custom' runtime will be built using this dockerfile
     dockerfile: ./Dockerfile
     context: ../../
     args:
