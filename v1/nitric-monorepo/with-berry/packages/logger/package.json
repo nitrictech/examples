@@ -1,0 +1,10 @@
+{
+  "name": "@repo/logger",
+  "version": "0.0.0",
+  "private": true,
+  "main": "./src/index.ts",
+  "devDependencies": {
+    "@repo/tsconfig": "workspace:*",
+    "typescript": "^5.5.3"
+  }
+}

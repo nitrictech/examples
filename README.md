@@ -61,6 +61,7 @@ When utilizing the `nitric new` command to initiate a new project, the available
 | [nitric-koa](./v1/nitric-koa/)                   | A secure URL upload demonstrating usage with Nitric and KOA framework                               | Existing API Frameworks, Storage                        |
 | [nitric-hono](./v1/nitric-hono/)                 | A secure URL upload demonstrating usage with Nitric and Hono                                        | Existing API Frameworks, Storage                        |
 | [nitric-fastify](./v1/nitric-fastify/)           | A secure URL upload demonstrating usage with Nitric and fastify                                     | Existing API Frameworks, Storage                        |
+| [nitric-monorepo](./v1/nitric-monorepo/)         | Several monorepo examples that contains a Next.js app, a nitric API and shared packages             | APIs                                                    |
 | [websockets](./v1/websockets/)                   | A basic websockets example                                                                          | APIs, Key Value Stores                                  |
 | [real-time-chat](./v1/realtime-chat-app/)        | A realtime chat using Websockets, Next.js, Nitric and Clerk Auth                                    | APIs, WebSockets, Frontend, Auth                        |
 | [scheduled-report](./v1/scheduled-report/)       | A scheduled report generated with Google Sheets and shared with Google Drive                        | APIs, Schedules                                         |
