@@ -3,15 +3,11 @@
   "version": "0.0.0",
   "private": true,
   "main": "./src/index.ts",
-  "scripts": {
-    "build": "tsc",
-    "clean": "rm -rf dist",
-    "dev": "tsc -w"
-  },
   "dependencies": {
     "@nitric/sdk": "^1.2.1"
   },
   "devDependencies": {
+    "@repo/tsconfig": "workspace:*",
     "typescript": "^5.5.3"
   }
 }

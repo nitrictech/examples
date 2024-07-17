@@ -1,10 +1,8 @@
 {
+  "extends": "@repo/tsconfig/base.json",
   "compilerOptions": {
     "outDir": "./dist",
-    "rootDir": "./src",
-    "esModuleInterop": true,
-    "target": "ESNext",
-    "moduleResolution": "node"
+    "rootDir": "./src"
   },
   "include": ["src"],
   "exclude": ["dist", "build", "node_modules"]

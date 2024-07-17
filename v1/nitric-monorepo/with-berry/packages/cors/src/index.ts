@@ -1,4 +1,4 @@
-import { HttpMiddleware } from "@nitric/sdk";
+import type { HttpMiddleware } from "@nitric/sdk";
 
 export const optionsHandler: HttpMiddleware = (ctx) => {
   ctx.res.headers["Content-Type"] = ["text/html; charset=ascii"];
