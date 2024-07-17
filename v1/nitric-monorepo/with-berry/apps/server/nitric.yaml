@@ -1,0 +1,13 @@
+name: server
+services:
+  - match: services/*.ts
+    runtime: custom
+    type: ""
+    start: npm run dev:services $SERVICE_PATH
+runtimes:
+  custom:
+    # All services that specify the 'turbo' runtime will be built using this dockerfile
+    dockerfile: ./Dockerfile
+    context: ../../
+    args:
+      PACKAGE_SCOPE: "server"

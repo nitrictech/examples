@@ -1,0 +1,19 @@
+{
+  "name": "server",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "dev:services": "nodemon -r dotenv/config"
+  },
+  "dependencies": {
+    "@nitric/sdk": "^1.2.1",
+    "@repo/cors": "workspace:*",
+    "@repo/logger": "workspace:*"
+  },
+  "devDependencies": {
+    "@types/node": "^20.11.24",
+    "dotenv": "^16.4.5",
+    "nodemon": "^3.1.4",
+    "typescript": "^5.5.3"
+  }
+}

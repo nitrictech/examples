@@ -1,0 +1,11 @@
+{
+  "compilerOptions": {
+    "outDir": "./dist",
+    "rootDir": "./src",
+    "esModuleInterop": true,
+    "target": "ESNext",
+    "moduleResolution": "node"
+  },
+  "include": ["src"],
+  "exclude": ["dist", "build", "node_modules"]
+}
