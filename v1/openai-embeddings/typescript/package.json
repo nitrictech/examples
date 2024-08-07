@@ -17,7 +17,7 @@
     "@types/common-tags": "^1.8.4",
     "@types/node": "^18.16.0",
     "dotenv": "^16.4.4",
-    "nodemon": "2.0.1",
+    "nodemon": "^3.1.4",
     "ts-node": "^10.9.2",
     "typescript": "^5.3.3"
   },
