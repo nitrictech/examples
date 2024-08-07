@@ -4,7 +4,7 @@
   "private": true,
   "main": "./src/index.ts",
   "dependencies": {
-    "@nitric/sdk": "^1.2.1"
+    "@nitric/sdk": "^1.2.2"
   },
   "devDependencies": {
     "@repo/tsconfig": "workspace:*",

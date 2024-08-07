@@ -8,8 +8,8 @@
     "@nitric/sdk": "^1.2.2"
   },
   "devDependencies": {
-    "dotenv": "^16.4.4",
-    "nodemon": "2.0.1"
+    "dotenv": "^16.4.5",
+    "nodemon": "^3.1.4"
   },
   "scripts": {
     "dev:services": "nodemon -r dotenv/config"

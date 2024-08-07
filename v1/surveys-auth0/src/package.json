@@ -5,7 +5,7 @@
   "main": "index.js",
   "private": true,
   "dependencies": {
-    "@nitric/sdk": "1.1.0",
+    "@nitric/sdk": "^1.2.2",
     "jsonwebtoken": "^9.0.0",
     "pdfkit": "^0.13.0",
     "uuid": "^9.0.0",

@@ -5,7 +5,7 @@
   "main": "index.js",
   "private": true,
   "dependencies": {
-    "@nitric/sdk": "1.1.0",
+    "@nitric/sdk": "^1.2.2",
     "@supabase/supabase-js": "^2.20.0",
     "common-tags": "^1.8.2",
     "github-slugger": "^2.0.0",
@@ -17,7 +17,7 @@
     "@types/common-tags": "^1.8.4",
     "@types/node": "^18.16.0",
     "dotenv": "^16.4.4",
-    "nodemon": "2.0.1",
+    "nodemon": "^3.1.4",
     "ts-node": "^10.9.2",
     "typescript": "^5.3.3"
   },

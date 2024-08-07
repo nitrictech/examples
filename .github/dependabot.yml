@@ -6,16 +6,8 @@
 version: 2
 updates:
   - package-ecosystem: "npm"
-    directory: "/v1/javascript-starter"
-    schedule:
-      interval: "daily"
-    versioning-strategy: increase
-    allow:
-      # Allow updates for nitric
-      - dependency-name: "@nitric/*"
-
-  - package-ecosystem: "npm"
-    directory: "/v1/typescript-starter"
+    directories:
+      - "/v1/*"
     schedule:
       interval: "daily"
     versioning-strategy: increase
@@ -24,7 +16,8 @@ updates:
       - dependency-name: "@nitric/*"
 
   - package-ecosystem: "pip"
-    directory: "/v1/python-starter"
+    directories:
+      - "/v1/*"
     schedule:
       interval: "daily"
     versioning-strategy: increase
@@ -33,7 +26,8 @@ updates:
       - dependency-name: "nitric"
 
   - package-ecosystem: "pub"
-    directory: "/v1/dart-starter"
+    directories:
+      - "/v1/*"
     schedule:
       interval: "daily"
     versioning-strategy: increase
@@ -41,22 +35,16 @@ updates:
       - dependency-name: "nitric_sdk"
 
   - package-ecosystem: "gomod"
-    directory: "/v1/go-starter"
+    directories:
+      - "/v1/*"
     schedule:
       interval: "daily"
     allow:
       - dependency-name: "github.com/nitrictech/go-sdk"
 
   - package-ecosystem: "gradle"
-    directory: "/v1/java-starter"
-    schedule:
-      interval: "daily"
-    allow:
-      # Allow updates for nitric
-      - dependency-name: "com.github.nitrictech:jvm-sdk"
-
-  - package-ecosystem: "gradle"
-    directory: "/v1/kotlin-starter"
+    directories:
+      - "/v1/*"
     schedule:
       interval: "daily"
     allow:

@@ -6,7 +6,7 @@
     "dev:services": "nodemon -r dotenv/config"
   },
   "dependencies": {
-    "@nitric/sdk": "^1.2.1",
+    "@nitric/sdk": "^1.2.2",
     "@repo/cors": "workspace:*",
     "@repo/logger": "workspace:*"
   },

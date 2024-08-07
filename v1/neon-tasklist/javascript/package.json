@@ -6,12 +6,12 @@
   "private": true,
   "type": "module",
   "dependencies": {
-    "@nitric/sdk": "1.1.0",
+    "@nitric/sdk": "^1.2.2",
     "pg": "^8.11.0"
   },
   "devDependencies": {
     "dotenv": "^16.4.4",
-    "nodemon": "2.0.1"
+    "nodemon": "^3.1.4"
   },
   "scripts": {
     "dev:services": "nodemon -r dotenv/config"
