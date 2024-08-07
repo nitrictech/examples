@@ -6,7 +6,7 @@
   "private": true,
   "dependencies": {
     "@aws-sdk/client-ses": "^3.201.0",
-    "@nitric/sdk": "1.1.0",
+    "@nitric/sdk": "^1.2.2",
     "aws-sdk": "^2.1245.0",
     "jest": "^29.5.0",
     "uuidv4": "^6.2.13"

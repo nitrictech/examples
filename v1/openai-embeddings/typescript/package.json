@@ -5,7 +5,7 @@
   "main": "index.js",
   "private": true,
   "dependencies": {
-    "@nitric/sdk": "1.1.0",
+    "@nitric/sdk": "^1.2.2",
     "@supabase/supabase-js": "^2.20.0",
     "common-tags": "^1.8.2",
     "github-slugger": "^2.0.0",

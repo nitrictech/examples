@@ -6,7 +6,7 @@
   "private": true,
   "type": "module",
   "dependencies": {
-    "@nitric/sdk": "1.1.0",
+    "@nitric/sdk": "^1.2.2",
     "pg": "^8.11.0"
   },
   "devDependencies": {
