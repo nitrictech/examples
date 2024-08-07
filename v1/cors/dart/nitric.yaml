@@ -1,0 +1,6 @@
+name: dart-cors-example
+services:
+  - match: services/*.dart
+    runtime: ""
+    type: ""
+    start: dart run --observe $SERVICE_PATH
