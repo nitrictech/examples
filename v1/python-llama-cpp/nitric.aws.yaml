@@ -1,0 +1,15 @@
+# The nitric provider to use
+provider: nitric/aws@1.10.1
+# The target aws region to deploy to
+# See available regions:
+# https://docs.aws.amazon.com/general/latest/gr/lambda-service.html
+region: ap-southeast-2
+
+# # Configure your deployed functions/services
+config:
+  # How functions without a type will be deployed
+  default:
+    # configure functions to deploy to AWS lambda
+    lambda: # Available since v0.26.0
+      memory: 10240
+      timeout: 900

@@ -1,0 +1,11 @@
+name: serverless-llm
+services:
+    - match: services/*.py
+      runtime: "llama"
+      type: ""
+      start: pipenv run dev $SERVICE_PATH
+
+runtimes:
+  llama:
+    dockerfile: ./docker/llama.dockerfile
+    args: {}
