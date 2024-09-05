@@ -2,6 +2,8 @@
 
 ## About Nitric
 
+> ⚠️ Note: This repo contains features that require a minimum nitric CLI version of [1.52.0](https://github.com/nitrictech/cli/releases/tag/v1.52.0)
+
 This is a [Nitric](https://nitric.io) Golang project, but Nitric is a framework for rapid development of cloud-native and serverless applications in many languages.
 
 Using Nitric you define your apps in terms of the resources they need, then write the code for serverless function based APIs, event subscribers and scheduled jobs.
