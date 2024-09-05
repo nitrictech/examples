@@ -9,10 +9,15 @@ import (
 )
 
 func main() {
-	helloTypescriptTopic, _ := nitric.NewTopic("hello-typescript").Allow(nitric.TopicPublish)
-	helloGolangTopic := nitric.NewTopic("hello-golang")
-	api, err := nitric.NewApi("main")
+	helloTypescriptTopic, err := nitric.NewTopic("hello-typescript").Allow(nitric.TopicPublish)
+	if err != nil {
+		fmt.Println(err)
+		return
+	}
 
+	helloGolangTopic := nitric.NewTopic("hello-golang")
+
+	api, err := nitric.NewApi("main")
 	if err != nil {
 		fmt.Println(err)
 		return
