@@ -1,0 +1,9 @@
+name: backend
+services:
+  - match: lib/services/*.dart
+    runtime: flutter
+    start: dart run $SERVICE_PATH
+runtimes:
+  flutter:
+    dockerfile: ./docker/flutter.dockerfile
+    args: {}

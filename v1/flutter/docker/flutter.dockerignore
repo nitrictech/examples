@@ -1,0 +1,13 @@
+build
+test
+.nitric
+.idea
+.dart_tool
+.git
+docker
+android
+ios
+linux
+macos
+web
+windows
