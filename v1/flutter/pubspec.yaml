@@ -37,7 +37,7 @@ dependencies:
   english_words: ^4.0.0
   http: ^1.2.2
   provider: ^6.1.2
-  nitric_sdk: ^1.2.0
+  nitric_sdk: ^1.4.0
 
 dev_dependencies:
   flutter_test:

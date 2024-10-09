@@ -1,64 +1,57 @@
 import 'dart:convert';
+import 'package:word_generator/cors.dart';
+import 'package:word_generator/favorite.dart';
 
 import 'package:nitric_sdk/nitric.dart';
-import 'package:word_generator/cors.dart';
-import 'package:word_generator/favourite.dart';
 
-void main() {
+void main() async {
   final api = Nitric.api("main", opts: ApiOptions(middlewares: [addCors]));
 
-  final favouritesKV = Nitric.kv("favourites").allow([
+  final favoritesKV = Nitric.kv("favorites").allow([
     KeyValueStorePermission.get,
     KeyValueStorePermission.set,
     KeyValueStorePermission.delete
   ]);
 
-  api.options("/favourites", optionsHandler);
-  api.options("/favourite", optionsHandler);
+  api.options("/favorites", optionsHandler);
+  api.get("/favorites", (ctx) async {
+    var keys = await favoritesKV.keys();
 
-  api.get("/favourites", (ctx) async {
-    // Get a list of all the keys in the store
-    var keyStream = await favouritesKV.keys();
+    var favorites = await keys.asyncMap((k) async {
+      final favorite = await favoritesKV.get(k);
 
-    // Convert the keys to a list of favourites
-    var favourites = await keyStream.asyncMap((k) async {
-      final favourite = await favouritesKV.get(k);
-
-      return favourite;
+      return favorite;
     }).toList();
 
-    // Return the body as a list of favourites
-    ctx.res.body = jsonEncode(favourites);
+    ctx.res.body = jsonEncode(favorites);
 
     return ctx;
   });
 
-  api.post("/favourite", (ctx) async {
+  api.options("/favorite", optionsHandler);
+  api.post("/favorite", (ctx) async {
     final req = ctx.req.json();
 
-    // convert the request json to a Favourite object
-    final favourite = Favourite.fromJson(req);
+    final favorite = Favorite.fromJson(req);
 
-    // search for the key, filtering by the name of the favourite
-    final stream = await favouritesKV.keys(prefix: favourite.name);
+    var exists = false;
 
-    // checks if the favourite exists in the list of keys
-    final exists = await stream.any((f) => f == favourite.name);
+    final keys = await favoritesKV.keys(prefix: favorite.name);
+
+    await for (final key in keys) {
+      if (key == favorite.name) {
+        exists = true;
+      }
+    }
 
     // if it exists delete and return
     if (exists) {
-      await favouritesKV.delete(favourite.name);
+      await favoritesKV.delete(favorite.name);
 
       return ctx;
     }
 
-    // if it doesn't exist, create it
-    try {
-      await favouritesKV.set(favourite.name, Favourite.toJson(favourite));
-    } catch (e) {
-      ctx.res.status = 500;
-      ctx.res.body = "could not set ${favourite.name}";
-    }
+    await favoritesKV.set(favorite.name, Favorite.toJson(favorite));
 
     return ctx;
   });

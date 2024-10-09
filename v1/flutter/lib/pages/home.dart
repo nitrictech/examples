@@ -1,48 +1,45 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:word_generator/providers/favourites.dart';
-
-import 'favourites.dart';
+import 'package:word_generator/providers/favorites.dart';
+import 'favorites.dart';
 import 'generator.dart';
 
 class HomePage extends StatefulWidget {
+  const HomePage({super.key});
+
   @override
   State<HomePage> createState() => _HomePageState();
 }
 
 class _HomePageState extends State<HomePage> {
   var selectedIndex = 0;
-
   @override
   void initState() {
     super.initState();
-    context.read<FavouritesProvider>().fetchData();
+    context.read<FavoritesProvider>().fetchData();
   }
 
   @override
   Widget build(BuildContext context) {
     var colorScheme = Theme.of(context).colorScheme;
-
     Widget page;
     switch (selectedIndex) {
       case 0:
         page = GeneratorPage();
       case 1:
-        page = FavouritesPage();
+        page = FavoritesPage();
       default:
         throw UnimplementedError('no widget for $selectedIndex');
     }
-
     // The container for the current page, with its background color
     // and subtle switching animation.
     var mainArea = ColoredBox(
       color: colorScheme.surfaceContainerHighest,
       child: AnimatedSwitcher(
-        duration: Duration(milliseconds: 200),
+        duration: const Duration(milliseconds: 200),
         child: page,
       ),
     );
-
     return Scaffold(
       body: LayoutBuilder(
         builder: (context, constraints) {
@@ -52,7 +49,7 @@ class _HomePageState extends State<HomePage> {
                 Expanded(child: mainArea),
                 SafeArea(
                   child: BottomNavigationBar(
-                    items: [
+                    items: const [
                       BottomNavigationBarItem(
                         icon: Icon(Icons.home),
                         label: 'Home',

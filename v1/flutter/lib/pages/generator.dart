@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:word_generator/providers/favourites.dart';
+import 'package:word_generator/providers/favorites.dart';
 import 'package:word_generator/providers/word.dart';
 
 class GeneratorPage extends StatelessWidget {
@@ -12,12 +12,12 @@ class GeneratorPage extends StatelessWidget {
       color: theme.colorScheme.onPrimary,
     );
 
-    final favourites = context.watch<FavouritesProvider>();
+    final favorites = context.watch<FavoritesProvider>();
     final words = context.watch<WordProvider>();
 
     IconData icon = Icons.favorite_border;
 
-    if (favourites.hasFavourite(words.current)) {
+    if (favorites.hasFavorite(words.current)) {
       icon = Icons.favorite;
     }
 
@@ -25,18 +25,18 @@ class GeneratorPage extends StatelessWidget {
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Expanded(
+          const Expanded(
             // <- allows the list to extend to the top of the page
             flex: 3,
             child: HistoryListView(), // <- Add the history list view here
           ),
-          SizedBox(height: 10),
+          const SizedBox(height: 10),
           Card(
             color: theme.colorScheme.primary,
             child: Padding(
               padding: const EdgeInsets.all(20),
               child: AnimatedSize(
-                duration: Duration(milliseconds: 200),
+                duration: const Duration(milliseconds: 200),
                 child: MergeSemantics(
                   child: Wrap(
                     children: [
@@ -54,27 +54,27 @@ class GeneratorPage extends StatelessWidget {
               ),
             ),
           ),
-          SizedBox(height: 10),
+          const SizedBox(height: 10),
           Row(
             mainAxisSize: MainAxisSize.min,
             children: [
               ElevatedButton.icon(
                 onPressed: () {
-                  favourites.toggleFavourite(words.current);
+                  favorites.toggleFavorite(words.current);
                 },
                 icon: Icon(icon),
-                label: Text('Like'),
+                label: const Text('Like'),
               ),
-              SizedBox(width: 10),
+              const SizedBox(width: 10),
               ElevatedButton(
                 onPressed: () {
                   words.getNext();
                 },
-                child: Text('Next'),
+                child: const Text('Next'),
               ),
             ],
           ),
-          Spacer(flex: 2),
+          const Spacer(flex: 2),
         ],
       ),
     );
@@ -101,7 +101,7 @@ class _HistoryListViewState extends State<HistoryListView> {
 
   @override
   Widget build(BuildContext context) {
-    final favourites = context.watch<FavouritesProvider>();
+    final favorites = context.watch<FavoritesProvider>();
     final words = context.watch<WordProvider>();
 
     // Set the key of the animated list to the WordProvider GlobalKey so it can be manipulated from there
@@ -118,7 +118,7 @@ class _HistoryListViewState extends State<HistoryListView> {
         key: _key,
         // Reverse the list so the latest is on the bottom
         reverse: true,
-        padding: EdgeInsets.only(top: 100),
+        padding: const EdgeInsets.only(top: 100),
         initialItemCount: words.history.length,
         // Build each item in the list, will be run initially and when a new word pair is added.
         itemBuilder: (context, index, animation) {
@@ -128,12 +128,12 @@ class _HistoryListViewState extends State<HistoryListView> {
             child: Center(
               child: TextButton.icon(
                 onPressed: () {
-                  favourites.toggleFavourite(pair);
+                  favorites.toggleFavorite(pair);
                 },
-                // If the word pair was favourited, show a heart next to it
-                icon: favourites.hasFavourite(pair)
-                    ? Icon(Icons.favorite, size: 12)
-                    : SizedBox(),
+                // If the word pair was favorited, show a heart next to it
+                icon: favorites.hasFavorite(pair)
+                    ? const Icon(Icons.favorite, size: 12)
+                    : const SizedBox(),
                 label: Text(
                   pair.asLowerCase,
                 ),

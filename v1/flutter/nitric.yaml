@@ -2,7 +2,7 @@ name: backend
 services:
   - match: lib/services/*.dart
     runtime: flutter
-    start: dart run --observe $SERVICE_PATH
+    start: dart run $SERVICE_PATH
 runtimes:
   flutter:
     dockerfile: ./docker/flutter.dockerfile
