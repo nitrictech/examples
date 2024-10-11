@@ -1,0 +1,17 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "python starter"
+
+[requires]
+python_version = "3.11"
+
+[packages]
+nitric = "==1.2.0"
+bpy = "==4.2.0"
+
+[scripts]
+dev = "watchmedo auto-restart -p '*.py' -R python -- -u"
+
+[dev-packages]
+watchdog = "*"
