@@ -78,9 +78,10 @@ When utilizing the `nitric new` command to initiate a new project, the available
 
 ### Dart
 
-| Name                               | Description      | Features |
-| ---------------------------------- | ---------------- | -------- |
-| [dart-starter](./v1/dart-starter/) | REST API Starter | APIs     |
+| Name                               | Description                                     | Features               |
+| ---------------------------------- | ----------------------------------------------- | ---------------------- |
+| [dart-starter](./v1/dart-starter/) | REST API Starter                                | APIs                   |
+| [flutter](./v1/flutter/)           | Basic Flutter Application with a Nitric backend | APIs, Key Value Stores |
 
 ### Go
 

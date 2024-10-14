@@ -1,0 +1,61 @@
+{
+  "resources": [
+    {
+      "id": {
+        "name": "main"
+      },
+      "api": {
+        "openapi": "{\"components\":{},\"info\":{\"title\":\"main\",\"version\":\"v1\"},\"openapi\":\"3.0.1\",\"paths\":{\"/favourite\":{\"options\":{\"operationId\":\"favouriteoptions\",\"responses\":{\"default\":{\"description\":\"\"}},\"security\":[],\"x-nitric-target\":{\"name\":\"backend_lib-services-main\",\"type\":\"function\"}},\"post\":{\"operationId\":\"favouritepost\",\"responses\":{\"default\":{\"description\":\"\"}},\"security\":[],\"x-nitric-target\":{\"name\":\"backend_lib-services-main\",\"type\":\"function\"}}},\"/favourites\":{\"get\":{\"operationId\":\"favouritesget\",\"responses\":{\"default\":{\"description\":\"\"}},\"security\":[],\"x-nitric-target\":{\"name\":\"backend_lib-services-main\",\"type\":\"function\"}},\"options\":{\"operationId\":\"favouritesoptions\",\"responses\":{\"default\":{\"description\":\"\"}},\"security\":[],\"x-nitric-target\":{\"name\":\"backend_lib-services-main\",\"type\":\"function\"}}}}}"
+      }
+    },
+    {
+      "id": {
+        "type": "KeyValueStore",
+        "name": "favourites"
+      },
+      "keyValueStore": {}
+    },
+    {
+      "id": {
+        "type": "Policy",
+        "name": "4e19479ef94af74f894d83df7315494c"
+      },
+      "policy": {
+        "principals": [
+          {
+            "id": {
+              "type": "Service",
+              "name": "backend_lib-services-main"
+            }
+          }
+        ],
+        "actions": [
+          "KeyValueStoreRead",
+          "KeyValueStoreWrite",
+          "KeyValueStoreDelete"
+        ],
+        "resources": [
+          {
+            "id": {
+              "type": "KeyValueStore",
+              "name": "favourites"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": {
+        "type": "Service",
+        "name": "backend_lib-services-main"
+      },
+      "service": {
+        "image": {
+          "uri": "backend_lib-services-main"
+        },
+        "workers": 1,
+        "type": "default"
+      }
+    }
+  ]
+}
