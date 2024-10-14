@@ -4,7 +4,7 @@ go 1.22.1
 
 toolchain go1.22.8
 
-require github.com/nitrictech/go-sdk v1.1.0
+require github.com/nitrictech/go-sdk v1.1.1
 
 require (
 	github.com/missionMeteora/toolkit v0.0.0-20170713173850-88364e3ef8cc // indirect
