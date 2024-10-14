@@ -1,0 +1,13 @@
+name: multi-language
+services:
+    - basedir: ./ts
+      match: services/*.ts
+      start: npm run dev:services $SERVICE_PATH
+    - basedir: ./go
+      match: services/*
+      runtime: go
+      start: go run ./$SERVICE_PATH/...
+runtimes:
+    go:
+        dockerfile: ./go/golang.dockerfile
+        args: {}
