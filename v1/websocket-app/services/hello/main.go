@@ -4,47 +4,39 @@ import (
 	"context"
 	"fmt"
 
-	"github.com/nitrictech/go-sdk/handler"
 	"github.com/nitrictech/go-sdk/nitric"
+	"github.com/nitrictech/go-sdk/nitric/keyvalue"
+	"github.com/nitrictech/go-sdk/nitric/websockets"
 )
 
 func main() {
-	ws, err := nitric.NewWebsocket("public")
-	if err != nil {
-		fmt.Println("Error creating WebSocket:", err)
-		return
-	}
+	// Create a WebSocket endpoint named "public".
+	ws := nitric.NewWebsocket("public")
 
-	connections, err := nitric.NewKv("connections").Allow(nitric.KvStoreGet, nitric.KvStoreSet, nitric.KvStoreDelete)
-	if err != nil {
-		fmt.Println("Error creating KV store:", err)
-		return
-	}
+	// Initialize a KV store named "connections" with Get, Set, and Delete permissions.
+	connections := nitric.NewKv("connections").Allow(keyvalue.KvStoreGet, keyvalue.KvStoreSet, keyvalue.KvStoreDelete)
 
-	ws.On(handler.WebsocketConnect, func(ctx *handler.WebsocketContext, next handler.WebsocketHandler) (*handler.WebsocketContext, error) {
-		err := connections.Set(context.TODO(), ctx.Request.ConnectionID(), map[string]interface{}{
+	// Handle new WebSocket connections by storing the connection ID in the KV store.
+	ws.On(websockets.EventType_Connect, func(ctx *websockets.Ctx) {
+		err := connections.Set(context.Background(), ctx.Request.ConnectionID(), map[string]interface{}{
 			"connectionId": ctx.Request.ConnectionID(),
 		})
 		if err != nil {
-			return ctx, err
+			return
 		}
-
-		return next(ctx)
 	})
 
-	ws.On(handler.WebsocketDisconnect, func(ctx *handler.WebsocketContext, next handler.WebsocketHandler) (*handler.WebsocketContext, error) {
-		err := connections.Delete(context.TODO(), ctx.Request.ConnectionID())
+	ws.On(websockets.EventType_Disconnect, func(ctx *websockets.Ctx) {
+		err := connections.Delete(context.Background(), ctx.Request.ConnectionID())
 		if err != nil {
-			return ctx, err
+			return
 		}
-
-		return next(ctx)
 	})
 
-	ws.On(handler.WebsocketMessage, func(ctx *handler.WebsocketContext, next handler.WebsocketHandler) (*handler.WebsocketContext, error) {
-		connectionStream, err := connections.Keys(context.TODO())
+	ws.On(websockets.EventType_Message, func(ctx *websockets.Ctx) {
+		connectionStream, err := connections.Keys(context.Background())
 		if err != nil {
-			return ctx, err
+			return
 		}
 
 		senderId := ctx.Request.ConnectionID()
@@ -60,16 +52,12 @@ func main() {
 			}
 
 			message := fmt.Sprintf("%s: %s", senderId, ctx.Request.Message())
-			err = ws.Send(context.TODO(), connectionId, []byte(message))
+			err = ws.Send(context.Background(), connectionId, []byte(message))
 			if err != nil {
-				return ctx, err
+				return
 			}
 		}
-
-		return next(ctx)
 	})
 
-	if err := nitric.Run(); err != nil {
-		fmt.Println("Error running Nitric service:", err)
-	}
+	nitric.Run()
 }
