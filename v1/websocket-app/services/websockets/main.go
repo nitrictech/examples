@@ -22,6 +22,7 @@ func main() {
 			"connectionId": ctx.Request.ConnectionID(),
 		})
 		if err != nil {
+			fmt.Println("Error storing connection ID in KV store:", err)
 			return
 		}
 	})
@@ -29,6 +30,7 @@ func main() {
 	ws.On(websockets.EventType_Disconnect, func(ctx *websockets.Ctx) {
 		err := connections.Delete(context.Background(), ctx.Request.ConnectionID())
 		if err != nil {
+			fmt.Println("Error deleting connection ID in KV store:", err)
 			return
 		}
 	})
@@ -36,6 +38,7 @@ func main() {
 	ws.On(websockets.EventType_Message, func(ctx *websockets.Ctx) {
 		connectionStream, err := connections.Keys(context.Background())
 		if err != nil {
+			fmt.Println("Error retrieving connection keys from KV store:", err)
 			return
 		}
 
@@ -54,6 +57,7 @@ func main() {
 			message := fmt.Sprintf("%s: %s", senderId, ctx.Request.Message())
 			err = ws.Send(context.Background(), connectionId, []byte(message))
 			if err != nil {
+				fmt.Println("Error sending message to connection ID", connectionId, ":", err)
 				return
 			}
 		}
