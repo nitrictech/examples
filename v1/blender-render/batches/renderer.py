@@ -13,10 +13,10 @@ image_bucket = bucket("image_bucket").allow("write")
 
 @renderer(cpus=1, memory=1024, gpus=0)
 async def render_image(ctx: JobContext):
-  print(f"Starting render for image ${ctx.req.data['key']}")
+  print(f"Starting render for image {ctx.req.data['key']}")
 
   # Register the blender binary
-  blender_bin = "/opt/blender-4.2.2/build_linux/bin"
+  blender_bin = "/usr/local/blender/blender"
 
   if os.path.isfile(blender_bin):
     print("Found:", blender_bin)
@@ -40,8 +40,9 @@ async def render_image(ctx: JobContext):
 
   bpy.ops.wm.open_mainfile(filepath=input_path)
 
-  # bpy.context.scene.cycles.device = 'GPU'
-  # bpy.context.preferences.addons["cycles"].preferences.compute_device_type = "CUDA"
+  # Set render options
+  bpy.context.scene.render.image_settings.file_format = 'PNG'
+  bpy.context.scene.render.engine = 'CYCLES'
   bpy.context.scene.render.filepath = output_path
 
   print("Rendering scene")

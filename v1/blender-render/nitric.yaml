@@ -11,7 +11,6 @@ batch-services:
 runtimes:
   blender:
     dockerfile: ./blender.Dockerfile
-    args: {}
 
 preview:
   - batch-services

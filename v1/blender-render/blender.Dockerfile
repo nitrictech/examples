@@ -1,61 +1,62 @@
-FROM python:3.11-slim
+FROM python:3.11
+
+RUN \
+    apt-get update \
+    && apt-get install -y --no-install-recommends \
+    # Blender dependencies
+    libxi6 \
+    libxrender1 \
+    libglu1-mesa \
+    libgl1-mesa-glx \
+    libxxf86vm1 \
+    libxkbcommon0 \
+    libsm6 \
+    libxext6 \
+    ffmpeg \
+    # other dependencies
+    ca-certificates \
+    git \
+    gnupg2 \
+    # some useful utils
+    xz-utils \
+    screen \
+    unzip \
+    7zip \
+    curl \
+    vim \
+    jq && \
+    update-ca-certificates
+
+# cleanup
+RUN \
+    apt-get autoremove -y && \
+    apt-get autoclean -y && \
+    apt-get clean -y && \
+    apt-get purge -y && \
+    rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
+
+# Blender variables used for specifying the blender version
+
+ARG BLENDER_OS="linux-x64"
+ARG BL_VERSION_SHORT="4.2"
+ARG BL_VERSION_FULL="4.2.2"
+ARG BL_DL_ROOT_URL="https://mirrors.ocf.berkeley.edu/blender/release"
+ARG BLENDER_DL_URL=${BL_DL_ROOT_URL}/Blender${BL_VERSION_SHORT}/blender-${BL_VERSION_FULL}-${BLENDER_OS}.tar.xz
+
+RUN echo "Blender Download URL is $BLENDER_DL_URL"
+RUN echo ${BLENDER_DL_URL}
+
+# Set the working directory where we'll unpack blender
+WORKDIR /usr/local/blender
+
+# Download and unpack Blender
+RUN curl -SL $BLENDER_DL_URL -o blender.tar.xz \
+        && tar -xf blender.tar.xz --strip-components=1 && rm blender.tar.xz;
 
 ARG HANDLER
 
 ENV HANDLER=${HANDLER}
 ENV PYTHONUNBUFFERED=TRUE
-
-RUN apt-get update -y && \
-    apt-get install -y \
-      python3 \
-      ca-certificates \
-      wget \
-      xz-utils \
-      sudo \
-      build-essential \ 
-      git \
-      git-lfs \
-      subversion \
-      ninja-build \
-      cmake \
-      cmake-gui \
-      cmake-curses-gui \
-      libx11-dev \
-      libxxf86vm-dev \
-      libxcursor-dev \
-      libxi-dev \
-      libxrandr-dev \
-      libxinerama-dev \
-      libegl-dev \
-      libgl-dev \
-      libwayland-dev \
-      wayland-protocols \
-      libxkbcommon-dev \
-      libdbus-1-dev \
-      linux-libc-dev \
-      libdecor-0-dev \
-      libjpeg-dev \
-      libpng-dev \
-      zlib1g-dev \
-      libzstd-dev \
-      libepoxy-dev \
-      libtiff-dev \
-      libfreetype-dev \
-      libopenimageio-dev \
-      libpugixml-dev \
-      libboost-all-dev \
-      libopencolorio-dev \
-      libembree-dev && \
-      update-ca-certificates
-
-
-RUN which cmake 
-
-RUN wget https://download.blender.org/source/blender-4.2.2.tar.xz
-
-RUN tar -xvf blender-4.2.2.tar.xz && rm blender-4.2.2.tar.xz
-
-RUN cd ./blender-4.2.2 && make 
 
 RUN pip install --upgrade pip pipenv
 
