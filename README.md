@@ -85,10 +85,11 @@ When utilizing the `nitric new` command to initiate a new project, the available
 
 ### Go
 
-| Name                                 | Description                | Features                       |
-| ------------------------------------ | -------------------------- | ------------------------------ |
-| [go-starter](./v1/go-starter/)       | REST API Starter           | APIs                           |
-| [url-shortener](./v1/url-shortener/) | URL Shortener with Pub/Sub | APIs, Topics, Key Value Stores |
+| Name                                 | Description                | Features                           |
+| ------------------------------------ | -------------------------- | ---------------------------------- |
+| [go-starter](./v1/go-starter/)       | REST API Starter           | APIs                               |
+| [url-shortener](./v1/url-shortener/) | URL Shortener with Pub/Sub | APIs, Topics, Key Value Stores     |
+| [websocket-app](./v1/websocket-app/) | A basic websockets example | APIs, WebSockets, Key Value Stores |
 
 ## About Nitric
 
