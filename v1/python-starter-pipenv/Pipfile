@@ -10,7 +10,7 @@ python_version = "3.12"
 nitric = "==1.2.1"
 
 [scripts]
-dev = "PYTHONPATH=. watchmedo auto-restart -p '*.py' -R python -- -u"
+dev = "watchmedo auto-restart -p '*.py' -R python -- -u"
 
 [dev-packages]
 watchdog = "*"

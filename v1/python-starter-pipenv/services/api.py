@@ -4,8 +4,6 @@ from nitric.context import HttpContext
 
 main = api("main")
 
-print("running service")
-
 @main.get("/hello/:name")
 async def hello_world(ctx: HttpContext):
     name = ctx.req.params['name']

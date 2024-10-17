@@ -1,26 +1,32 @@
-FROM python:3.11-slim
+# The python version must match the version in .python-version
+FROM ghcr.io/astral-sh/uv:python3.11-bookworm-slim AS builder
 
-# Setup the var pointing to the current nitric service being built
 ARG HANDLER
 ENV HANDLER=${HANDLER}
 
-ENV PYTHONUNBUFFERED=TRUE
-ENV PYTHONPATH="."
+ENV UV_COMPILE_BYTECODE=1 UV_LINK_MODE=copy PYTHONPATH=.
+WORKDIR /app
+RUN --mount=type=cache,target=/root/.cache/uv \
+  --mount=type=bind,source=uv.lock,target=uv.lock \
+  --mount=type=bind,source=pyproject.toml,target=pyproject.toml \
+  uv sync --frozen --no-install-project --no-dev --no-python-downloads
+COPY . /app
+RUN --mount=type=cache,target=/root/.cache/uv \
+  uv sync --frozen --no-dev --no-python-downloads
 
-RUN apt-get update -y && \
-  apt-get install -y ca-certificates git && \
-  update-ca-certificates
 
-RUN pip install --no-cache-dir --upgrade pip pipenv
+# Then, use a final image without uv
+FROM python:3.11-slim-bookworm
 
-COPY . .
+ARG HANDLER
+ENV HANDLER=${HANDLER} PYTHONPATH=.
 
-# Guarantee lock file if we have a Pipfile and no Pipfile.lock
-RUN (stat Pipfile && pipenv lock) || echo "No Pipfile found"
+# Copy the application from the builder
+COPY --from=builder --chown=app:app /app /app
+WORKDIR /app
 
-# Output a requirements.txt file for final module install if there is a Pipfile.lock found
-RUN (stat Pipfile.lock && pipenv requirements > requirements.txt) || echo "No Pipfile.lock found"
+# Place executables in the environment at the front of the path
+ENV PATH="/app/.venv/bin:$PATH"
 
-RUN pip install --no-cache-dir -r requirements.txt
-
-ENTRYPOINT python -u $HANDLER
+# Run the service using the path to the handler
+ENTRYPOINT /app/.venv/bin/python -u $HANDLER
