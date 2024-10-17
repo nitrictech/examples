@@ -1,7 +1,5 @@
 node_modules/
 .nitric/
-.env
-.env.local
 .DS_Store
 .next
 **/yarn.lock
