@@ -4,7 +4,7 @@ verify_ssl = true
 name = "python starter"
 
 [requires]
-python_version = "3.11"
+python_version = "3.12"
 
 [packages]
 nitric = "==1.2.1"

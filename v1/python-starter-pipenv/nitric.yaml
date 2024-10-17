@@ -1,7 +1,7 @@
 name: python-starter
 services:
   - match: services/*.py
-    start: uv run watchmedo auto-restart -p *.py --no-restart-on-command-exit -R python -- -u $SERVICE_PATH
+    start: pipenv run dev $SERVICE_PATH
     runtime: python
 runtimes:
   python:

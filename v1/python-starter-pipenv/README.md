@@ -16,12 +16,12 @@ If can also join [Discord](https://nitric.io/chat) to chat with the community, o
 
 ## Running this project
 
-To run this project you'll need the [Nitric CLI](https://nitric.io/docs/get-started/installation) installed, then you can use the CLI commands to run, build or deploy the project. You'll also need to install [uv](https://github.com/astral-sh/uv) for dependency management.
+To run this project you'll need the [Nitric CLI](https://nitric.io/docs/get-started/installation) installed, then you can use the CLI commands to run, build or deploy the project. You'll also need to install [pipenv](https://pipenv.pypa.io/en/latest/installation.html) for dependency management.
 
 Install the dependencies:
 
 ```bash
-uv sync
+pipenv install --dev
 ```
 
 Next, start nitric services.
@@ -32,4 +32,4 @@ Next, start nitric services.
 nitric start
 ```
 
-You'll see your services connect in the terminal output.
+You'll see your services connect in your nitric start terminal.
