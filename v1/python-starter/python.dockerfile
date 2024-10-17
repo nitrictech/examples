@@ -29,4 +29,4 @@ WORKDIR /app
 ENV PATH="/app/.venv/bin:$PATH"
 
 # Run the service using the path to the handler
-ENTRYPOINT /app/.venv/bin/python -u $HANDLER
+ENTRYPOINT python -u $HANDLER
