@@ -24,6 +24,7 @@ void main() async {
     }).toList();
 
     ctx.res.body = jsonEncode(favorites);
+    ctx.res.headers["Content-Type"] = ["application/json"];
 
     return ctx;
   });
