@@ -1,14 +1,31 @@
-FROM denoland/deno:2.0.1
+FROM denoland/deno:2.0.2 AS build
 
 ARG HANDLER
-ENV HANDLER=${HANDLER}
 
 WORKDIR /app
 
+# Set Deno install location to a directory we can cache
+ENV DENO_INSTALL_ROOT="/app/.deno"
+ENV PATH="$DENO_INSTALL_ROOT/bin:$PATH"
+
+RUN --mount=type=cache,target=/app/.deno \
+  --mount=type=bind,source=deno.lock,target=deno.lock \
+  --mount=type=bind,source=deno.json,target=deno.json \
+  deno install --allow-scripts
+
 COPY . .
 
-RUN deno install --entrypoint ${HANDLER} --allow-all
+# Consider reducing permissions
+RUN deno compile -o /bin/main --allow-all ${HANDLER}
 
-RUN deno cache ${HANDLER}
+FROM debian:bookworm-slim
 
-ENTRYPOINT deno run --allow-all ${HANDLER}
+COPY --from=build /bin/main /bin/main
+
+RUN chmod +xr-w /bin/main
+
+RUN apt update && \
+  apt install -y tzdata ca-certificates && \
+  rm -rf /var/lib/apt/lists/*
+
+ENTRYPOINT ["/bin/main"]
