@@ -4,7 +4,7 @@ version = "0.1.0"
 description = "Add your description here"
 readme = "README.md"
 requires-python = ">=3.11"
-dependencies = ["nitric ==1.2.2", "betterproto ==2.0.0b6"]
+dependencies = ["nitric ==1.2.3", "betterproto ==2.0.0b6"]
 
 [tool.uv]
 dev-dependencies = [
