@@ -7,7 +7,7 @@ name = "python starter"
 python_version = "3.12"
 
 [packages]
-nitric = "==1.2.2"
+nitric = "==1.2.3"
 
 [scripts]
 dev = "watchmedo auto-restart -p '*.py' -R python -- -u"
