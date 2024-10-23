@@ -1,0 +1,16 @@
+name: blender-render
+services:
+  - match: services/*.py
+    start: pipenv run dev $SERVICE_PATH
+
+batch-services:
+  - match: batches/*.py
+    start: pipenv run dev $SERVICE_PATH
+    runtime: blender
+
+runtimes:
+  blender:
+    dockerfile: ./blender.Dockerfile
+
+preview:
+  - batch-services
