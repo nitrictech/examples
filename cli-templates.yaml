@@ -2,10 +2,14 @@
 # when executing the "nitric new" command.
 templates:
   - name: ts-starter
-    label: TypeScript - Starter
+    label: TypeScript - Starter (Node)
     desc: A simple REST API
     path: ./v1/typescript-starter
-  - name: js-starter
+  - name: ts-starter-deno
+    label: TypeScript - Starter (Deno)
+    desc: A simple REST API using Deno
+    path: ./v1/typescript-starter-deno
+  - name: js-starter (Node)
     label: JavaScript - Starter
     desc: A simple REST API
     path: ./v1/javascript-starter

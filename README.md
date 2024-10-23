@@ -34,38 +34,39 @@ When utilizing the `nitric new` command to initiate a new project, the available
 
 ### TypeScript / JavaScript
 
-| Name                                             | Description                                                                                         | Features                                                |
-| ------------------------------------------------ | --------------------------------------------------------------------------------------------------- | ------------------------------------------------------- |
-| [typescript-starter](./v1/typescript-starter/)   | TypeScript REST API Starter                                                                         | APIs                                                    |
-| [javascript-starter](./v1/javascript-starter/)   | JavaScript REST API Starter                                                                         | APIs                                                    |
-| [auth-firebase](./v1/auth-firebase/)             | Integrate with Firebase Auth                                                                        | APIs, Auth, Frontend                                    |
-| [website-status](./v1/website-status/)           | Perform a ping to check to see if URL is available                                                  | APIs                                                    |
-| [openai-embeddings](./v1/openai-embeddings/)     | Populate and query a vector db with embeddings of the nitric docs from openai using Supabase        | APIs, AI, SQL Database                                  |
-| [middleware demo](./v1/middleware-demo/)         | A simple example of middleware handlers                                                             | APIs                                                    |
-| [inventory](./v1/product-inventory/)             | Simple inventory with image upload and labels generation with AWS Rekognition                       | APIs, Storage, Key Value Stores, Topics, Emails         |
-| [user-onboarding](./v1/user-onboarding/)         | Onboard a user and send them an email with AWS SES                                                  | APIs, Topics, Key Value Stores, Emails                  |
-| [uptime-monitoring](./v1/uptime-monitoring/)     | A website uptime monitor using Events, APIs and Schedules                                           | APIs, Topics, Schedules, Key Value Stores, Frontend     |
-| [dynamic-load](./v1/dynamic-load/)               | A simple example of loading a node js resource dynamically within an API                            | APIs                                                    |
-| [upload-secure-url](./v1/upload-secure-url/)     | Generate URLs to upload and download securely and directly from a Bucket                            | APIs, Storage                                           |
-| [graphql-profile-api](./v1/profile-api-graphql/) | Use GraphQL to Create a reliable, scalable, and performant HTTP endpoint                            | APIs, Key Value Stores, GraphQL                         |
-| [stripe-payments](./v1/stripe-payments/)         | Simple example of setting up and redirecting to a stripe payment gateway                            | APIs, Stripe Payments                                   |
-| [cockroach-example](./v1/cockroach-example/)     | Simple example of connecting to and adding entries into a cockroach db                              | APIs, SQL Database                                      |
-| [scheduled-tasks](./v1/scheduled-tasks/)         | Delete the items in a bucket (e.g. S3) every 3 days                                                 | APIs, Storage, Schedules                                |
-| [neon-postgres](./v1/neon/)                      | Simple example of connecting to and querying a neon postgres auto-scaling db                        | APIs, SQL Database                                      |
-| [neon-tasklist](./v1/neon-tasklist/)             | Create a task list with a Neon pg database.                                                         | APIs, SQL Database                                      |
-| [cloudflare-lb](./v1/cloudflare-lb/)             | Deploy a multi-cloud application with a cloudflare loadbalanced application                         | APIs, Multi-Cloud                                       |
-| [surveys-auth0](./v1/surveys-auth0/)             | A survey app with NextJS frontend with and without Auth0 integration to save and resume application | APIs, Topics, Key Value Stores, Storage, Auth, Frontend |
-| [nitric-drizzle](./v1/nitric-drizzle/)           | A PostgreSQL Database using Drizzle ORM deployed with AWS                                           | APIs, SQL Database                                      |
-| [nitric-prisma](./v1/nitric-prisma/)             | A PostgreSQL Database using Prisma ORM deployed with AWS                                            | APIs, SQL Database                                      |
-| [nitric-express](./v1/nitric-express/)           | A secure URL upload demonstrating usage with Nitric and Express framework                           | Existing API Frameworks, Storage                        |
-| [nitric-koa](./v1/nitric-koa/)                   | A secure URL upload demonstrating usage with Nitric and KOA framework                               | Existing API Frameworks, Storage                        |
-| [nitric-hono](./v1/nitric-hono/)                 | A secure URL upload demonstrating usage with Nitric and Hono                                        | Existing API Frameworks, Storage                        |
-| [nitric-fastify](./v1/nitric-fastify/)           | A secure URL upload demonstrating usage with Nitric and fastify                                     | Existing API Frameworks, Storage                        |
-| [nitric-monorepo](./v1/nitric-monorepo/)         | Several monorepo examples that contains a Next.js app, a nitric API and shared packages             | APIs                                                    |
-| [websockets](./v1/websockets/)                   | A basic websockets example                                                                          | APIs, Key Value Stores                                  |
-| [real-time-chat](./v1/realtime-chat-app/)        | A realtime chat using Websockets, Next.js, Nitric and Clerk Auth                                    | APIs, WebSockets, Frontend, Auth                        |
-| [scheduled-report](./v1/scheduled-report/)       | A scheduled report generated with Google Sheets and shared with Google Drive                        | APIs, Schedules                                         |
-| [apollo-server](./v1/apollo-server/)             | Simple GraphQL example using Apollo Server                                                          | APIs, HTTP                                              |
+| Name                                                     | Description                                                                                         | Features                                                |
+| -------------------------------------------------------- | --------------------------------------------------------------------------------------------------- | ------------------------------------------------------- |
+| [typescript-starter](./v1/typescript-starter/)           | TypeScript REST API Starter                                                                         | APIs                                                    |
+| [typescript-starter-deno](./v1/typescript-starter-deno/) | TypeScript REST API Starter with Deno 2                                                             | APIs                                                    |
+| [javascript-starter](./v1/javascript-starter/)           | JavaScript REST API Starter                                                                         | APIs                                                    |
+| [auth-firebase](./v1/auth-firebase/)                     | Integrate with Firebase Auth                                                                        | APIs, Auth, Frontend                                    |
+| [website-status](./v1/website-status/)                   | Perform a ping to check to see if URL is available                                                  | APIs                                                    |
+| [openai-embeddings](./v1/openai-embeddings/)             | Populate and query a vector db with embeddings of the nitric docs from openai using Supabase        | APIs, AI, SQL Database                                  |
+| [middleware demo](./v1/middleware-demo/)                 | A simple example of middleware handlers                                                             | APIs                                                    |
+| [inventory](./v1/product-inventory/)                     | Simple inventory with image upload and labels generation with AWS Rekognition                       | APIs, Storage, Key Value Stores, Topics, Emails         |
+| [user-onboarding](./v1/user-onboarding/)                 | Onboard a user and send them an email with AWS SES                                                  | APIs, Topics, Key Value Stores, Emails                  |
+| [uptime-monitoring](./v1/uptime-monitoring/)             | A website uptime monitor using Events, APIs and Schedules                                           | APIs, Topics, Schedules, Key Value Stores, Frontend     |
+| [dynamic-load](./v1/dynamic-load/)                       | A simple example of loading a node js resource dynamically within an API                            | APIs                                                    |
+| [upload-secure-url](./v1/upload-secure-url/)             | Generate URLs to upload and download securely and directly from a Bucket                            | APIs, Storage                                           |
+| [graphql-profile-api](./v1/profile-api-graphql/)         | Use GraphQL to Create a reliable, scalable, and performant HTTP endpoint                            | APIs, Key Value Stores, GraphQL                         |
+| [stripe-payments](./v1/stripe-payments/)                 | Simple example of setting up and redirecting to a stripe payment gateway                            | APIs, Stripe Payments                                   |
+| [cockroach-example](./v1/cockroach-example/)             | Simple example of connecting to and adding entries into a cockroach db                              | APIs, SQL Database                                      |
+| [scheduled-tasks](./v1/scheduled-tasks/)                 | Delete the items in a bucket (e.g. S3) every 3 days                                                 | APIs, Storage, Schedules                                |
+| [neon-postgres](./v1/neon/)                              | Simple example of connecting to and querying a neon postgres auto-scaling db                        | APIs, SQL Database                                      |
+| [neon-tasklist](./v1/neon-tasklist/)                     | Create a task list with a Neon pg database.                                                         | APIs, SQL Database                                      |
+| [cloudflare-lb](./v1/cloudflare-lb/)                     | Deploy a multi-cloud application with a cloudflare loadbalanced application                         | APIs, Multi-Cloud                                       |
+| [surveys-auth0](./v1/surveys-auth0/)                     | A survey app with NextJS frontend with and without Auth0 integration to save and resume application | APIs, Topics, Key Value Stores, Storage, Auth, Frontend |
+| [nitric-drizzle](./v1/nitric-drizzle/)                   | A PostgreSQL Database using Drizzle ORM deployed with AWS                                           | APIs, SQL Database                                      |
+| [nitric-prisma](./v1/nitric-prisma/)                     | A PostgreSQL Database using Prisma ORM deployed with AWS                                            | APIs, SQL Database                                      |
+| [nitric-express](./v1/nitric-express/)                   | A secure URL upload demonstrating usage with Nitric and Express framework                           | Existing API Frameworks, Storage                        |
+| [nitric-koa](./v1/nitric-koa/)                           | A secure URL upload demonstrating usage with Nitric and KOA framework                               | Existing API Frameworks, Storage                        |
+| [nitric-hono](./v1/nitric-hono/)                         | A secure URL upload demonstrating usage with Nitric and Hono                                        | Existing API Frameworks, Storage                        |
+| [nitric-fastify](./v1/nitric-fastify/)                   | A secure URL upload demonstrating usage with Nitric and fastify                                     | Existing API Frameworks, Storage                        |
+| [nitric-monorepo](./v1/nitric-monorepo/)                 | Several monorepo examples that contains a Next.js app, a nitric API and shared packages             | APIs                                                    |
+| [websockets](./v1/websockets/)                           | A basic websockets example                                                                          | APIs, Key Value Stores                                  |
+| [real-time-chat](./v1/realtime-chat-app/)                | A realtime chat using Websockets, Next.js, Nitric and Clerk Auth                                    | APIs, WebSockets, Frontend, Auth                        |
+| [scheduled-report](./v1/scheduled-report/)               | A scheduled report generated with Google Sheets and shared with Google Drive                        | APIs, Schedules                                         |
+| [apollo-server](./v1/apollo-server/)                     | Simple GraphQL example using Apollo Server                                                          | APIs, HTTP                                              |
 
 ### Python
 

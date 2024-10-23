@@ -1,0 +1,8 @@
+name: typescript-starter
+services:
+  - match: services/*.ts
+    start: deno run --watch --allow-all $SERVICE_PATH
+    runtime: deno
+runtimes:
+  deno:
+    dockerfile: "./deno.dockerfile"
