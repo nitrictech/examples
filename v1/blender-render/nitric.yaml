@@ -1,16 +1,19 @@
 name: blender-render
 services:
-  - match: services/*.py
-    start: pipenv run dev $SERVICE_PATH
+  - match: src/services/main.py
+    start: uv run watchmedo auto-restart -p *.py --no-restart-on-command-exit -R python -- -u $SERVICE_PATH
+    runtime: python
 
 batch-services:
-  - match: batches/*.py
-    start: pipenv run dev $SERVICE_PATH
+  - match: src/jobs/renderer.py
+    start: uv run watchmedo auto-restart -p *.py --no-restart-on-command-exit -R python -- -u $SERVICE_PATH
     runtime: blender
 
 runtimes:
   blender:
-    dockerfile: ./blender.Dockerfile
+    dockerfile: ./docker/blender.dockerfile
+  python:
+    dockerfile: ./docker/python.dockerfile
 
 preview:
   - batch-services
