@@ -2,3 +2,9 @@ name: dart-starter
 services:
   - match: services/*.dart
     start: dart run --observe $SERVICE_PATH
+    runtime: dart
+
+runtime:
+  dart:
+    dockerfile: ./dart.dockerfile
+    args: {}

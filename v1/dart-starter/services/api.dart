@@ -1,9 +1,9 @@
 import 'package:nitric_sdk/nitric.dart';
 
 void main() {
-  final helloApi = Nitric.api("main");
+  final mainApi = Nitric.api("main");
 
-  helloApi.get("/hello/:name", (ctx) async {
+  mainApi.get("/hello/:name", (ctx) async {
     final name = ctx.req.pathParams["name"]!;
 
     ctx.res.body = "Hello $name";
