@@ -2,3 +2,9 @@ name: typescript-starter
 services:
   - match: services/*.ts
     start: npm run dev:services $SERVICE_PATH
+    runtime: node
+
+runtimes:
+  node:
+    dockerfile: ./node.dockerfile
+    args: {}
