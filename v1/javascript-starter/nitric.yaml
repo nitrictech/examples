@@ -2,3 +2,9 @@ name: javascript-starter
 services:
   - match: ./services/*.js
     start: npm run dev:services $SERVICE_PATH
+    runtime: node
+
+runtime:
+  node:
+    dockerfile: ./node.dockerfile
+    args: {}
