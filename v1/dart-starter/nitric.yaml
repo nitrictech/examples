@@ -4,7 +4,7 @@ services:
     start: dart run --observe $SERVICE_PATH
     runtime: dart
 
-runtime:
+runtimes:
   dart:
     dockerfile: ./dart.dockerfile
     args: {}
