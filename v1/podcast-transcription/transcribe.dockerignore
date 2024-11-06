@@ -1,0 +1,5 @@
+.mypy_cache/
+.nitric/
+.venv/
+nitric.yaml
+README.md

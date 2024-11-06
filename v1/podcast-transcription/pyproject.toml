@@ -1,0 +1,21 @@
+[project]
+name = "python-uv-starter"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "nitric ==1.2.3",
+    "betterproto ==2.0.0b6",
+    "requests>=2.32.3",
+]
+
+[project.optional-dependencies]
+ml = [
+    "openai-whisper>=20240930",
+]
+
+[tool.uv]
+dev-dependencies = [
+    "watchdog>=5.0.3",
+]
