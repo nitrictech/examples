@@ -1,5 +1,5 @@
 [project]
-name = "python-blender-render"
+name = "python-uv-starter"
 version = "0.1.0"
 description = "Add your description here"
 readme = "README.md"
@@ -11,7 +11,7 @@ dependencies = [
 
 [project.optional-dependencies]
 ml = [
-    "bpy==4.2.0",
+    "bpy>=4.2.0",
 ]
 
 [tool.uv]
