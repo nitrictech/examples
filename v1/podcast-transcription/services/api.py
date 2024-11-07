@@ -18,16 +18,13 @@ async def get_podcast(ctx: HttpContext):
 
     return ctx
 
-@main_api.put("/audio/:name")
-async def put_audio(ctx: HttpContext):
+@main_api.get("/audio-upload-url/:name")
+async def get_audio_upload_url(ctx: HttpContext):
     name = ctx.req.params['name']
 
     upload_url = await writable_podcast_bucket.file(name).upload_url()
 
-    ctx.res.headers["Location"] = upload_url
-    ctx.res.status = 307
-
-    return ctx
+    ctx.res.body = upload_url
 
 @podcast_bucket.on("write", "*")
 async def on_add_podcast(ctx: BucketNotificationContext):
