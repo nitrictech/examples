@@ -19,6 +19,11 @@ RUN --mount=type=cache,target=/root/.cache/uv \
 
 FROM nvidia/cuda:12.6.2-cudnn-runtime-ubuntu24.04
 
+ARG HANDLER
+
+ENV HANDLER=${HANDLER}
+ENV PYTHONUNBUFFERED=TRUE
+ENV PYTHONPATH="."
 ENV NVIDIA_DRIVER_CAPABILITIES=all
 ENV NVIDIA_REQUIRE_CUDA="cuda>=8.0"
 
@@ -55,19 +60,12 @@ ARG BL_VERSION_FULL="4.2.2"
 ARG BL_DL_ROOT_URL="https://mirrors.ocf.berkeley.edu/blender/release"
 ARG BLENDER_DL_URL=${BL_DL_ROOT_URL}/Blender${BL_VERSION_SHORT}/blender-${BL_VERSION_FULL}-${BLENDER_OS}.tar.xz
 
-WORKDIR /app
-
 # Download and unpack Blender
 ADD $BLENDER_DL_URL blender
 
-ARG HANDLER
-
-ENV HANDLER=${HANDLER}
-ENV PYTHONUNBUFFERED=TRUE
-ENV PYTHONPATH="."
-
 # Copy the application from the builder
-COPY --from=builder --chown=app:app /app /app
+COPY --from=builder /app /app
+WORKDIR /app
 
 # Place executables in the environment at the front of the path
 ENV PATH="/app/.venv/bin:$PATH"

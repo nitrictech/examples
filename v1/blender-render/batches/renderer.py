@@ -10,7 +10,7 @@ readable_blend_bucket = blend_bucket.allow("read")
 writeable_rendered_bucket = rendered_bucket.allow("write")
 
 
-@renderer_job(cpus=1, memory=1024, gpus=0)
+@renderer_job(cpus=4, memory=12000, gpus=1)
 async def render_image(ctx: JobContext):
   import bpy
 
