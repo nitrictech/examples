@@ -6,10 +6,8 @@ ENV HANDLER=${HANDLER}
 ENV UV_COMPILE_BYTECODE=1 UV_LINK_MODE=copy PYTHONPATH=.
 
 WORKDIR /app
-
+COPY uv.lock pyproject.toml /app/
 RUN --mount=type=cache,target=/root/.cache/uv \
-  --mount=type=bind,source=uv.lock,target=uv.lock \
-  --mount=type=bind,source=pyproject.toml,target=pyproject.toml \
   uv sync --frozen -v --no-install-project --extra ml --no-dev --no-python-downloads
 
 COPY . /app
