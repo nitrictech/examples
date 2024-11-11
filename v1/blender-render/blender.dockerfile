@@ -6,7 +6,9 @@ ENV HANDLER=${HANDLER}
 ENV UV_COMPILE_BYTECODE=1 UV_LINK_MODE=copy PYTHONPATH=.
 
 WORKDIR /app
-COPY uv.lock pyproject.toml /app/
+
+COPY pyproject.toml uv.lock /app
+
 RUN --mount=type=cache,target=/root/.cache/uv \
   uv sync --frozen -v --no-install-project --extra ml --no-dev --no-python-downloads
 
@@ -17,11 +19,6 @@ RUN --mount=type=cache,target=/root/.cache/uv \
 
 FROM nvidia/cuda:12.6.2-cudnn-runtime-ubuntu24.04
 
-ARG HANDLER
-
-ENV HANDLER=${HANDLER}
-ENV PYTHONUNBUFFERED=TRUE
-ENV PYTHONPATH="."
 ENV NVIDIA_DRIVER_CAPABILITIES=all
 ENV NVIDIA_REQUIRE_CUDA="cuda>=8.0"
 
@@ -49,6 +46,8 @@ RUN --mount=type=cache,target=/var/cache/apt/archives \
   add-apt-repository ppa:deadsnakes/ppa && \
   apt-get install -y python3.11 && \
   ln -sf /usr/bin/python3.11 /usr/local/bin/python3.11 && \
+  ln -sf /usr/bin/python3.11 /usr/local/bin/python3 && \
+  ln -sf /usr/bin/python3.11 /usr/local/bin/python && \
   rm -rf /var/lib/apt/lists/*
 
 # Blender variables used for specifying the blender version
@@ -58,12 +57,19 @@ ARG BL_VERSION_FULL="4.2.2"
 ARG BL_DL_ROOT_URL="https://mirrors.ocf.berkeley.edu/blender/release"
 ARG BLENDER_DL_URL=${BL_DL_ROOT_URL}/Blender${BL_VERSION_SHORT}/blender-${BL_VERSION_FULL}-${BLENDER_OS}.tar.xz
 
+WORKDIR /app
+
 # Download and unpack Blender
 ADD $BLENDER_DL_URL blender
 
+ARG HANDLER
+
+ENV HANDLER=${HANDLER}
+ENV PYTHONUNBUFFERED=TRUE
+ENV PYTHONPATH="."
+
 # Copy the application from the builder
 COPY --from=builder /app /app
-WORKDIR /app
 
 # Place executables in the environment at the front of the path
 ENV PATH="/app/.venv/bin:$PATH"
