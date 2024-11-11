@@ -12,55 +12,74 @@ writeable_rendered_bucket = rendered_bucket.allow("write")
 
 @renderer_job(cpus=4, memory=12000, gpus=1)
 async def render_image(ctx: JobContext):
-  import bpy
+    import bpy
 
-  blend_key = ctx.req.data["key"]
+    blend_key = ctx.req.data["key"]
 
-  print(blend_key)
+    print(blend_key)
 
-  # Register the blender binary
-  blender_bin = "blender"
+    # Register the blender binary
+    blender_bin = "blender"
 
-  if os.path.isfile(blender_bin):    
-    bpy.app.binary_path = blender_bin
-  else:
-    print("unable to find blender path")
-    ctx.res.success = False
+    if os.path.isfile(blender_bin):
+        bpy.app.binary_path = blender_bin
+    else:
+        print("unable to find blender path")
+        ctx.res.success = False
+        return ctx
+
+    # load the file from a bucket to a local file
+    blend_file = await readable_blend_bucket.file(f"blend-{blend_key}.blend").read()
+
+    with open("input.blend", "wb") as f:
+        f.write(blend_file)
+
+    bpy.ops.wm.open_mainfile(filepath="input.blend")
+
+    try:
+        raw_metadata = await readable_blend_bucket.file(
+            f"metadata-{blend_key}.json"
+        ).read()
+    except:
+        raw_metadata = {}
+
+    metadata = json.loads(raw_metadata)
+
+    device = metadata.get("device", "GPU")
+
+    bpy.context.scene.render.filepath = blend_key
+    bpy.context.scene.render.engine = metadata.get("engine", "CYCLES")
+    bpy.context.scene.cycles.device = device
+    bpy.context.scene.render.image_settings.file_format = metadata.get(
+        "file_format", "PNG"
+    )
+    bpy.context.scene.render.fps = metadata.get("fps", "0")
+
+    cycles = bpy.context.preferences.addons["cycles"]
+
+    if device == "GPU":
+        print("setting device type to CUDA")
+        cycles.preferences.compute_device_type = "CUDA"
+        # reload the devices to update the configuration
+        cycles.preferences.get_devices()
+        for device in cycles.preferences.devices:
+            device.use = True
+
+    for dev in cycles.preferences.devices:
+        print(f"ID:{dev['id']} Name:{dev['name']} Type:{dev['type']} Use:{dev['use']}")
+
+    if metadata.get("animate", False):
+        bpy.ops.render.render(animation=True)
+    else:
+        bpy.ops.render.render(write_still=True)
+
+    file_name = glob.glob(f"{blend_key}*")[0]
+    with open(file_name, "rb") as f:
+        image_bytes = f.read()
+
+        await writeable_rendered_bucket.file(file_name).write(image_bytes)
+
     return ctx
-
-  # load the file from a bucket to a local file
-  blend_file = await readable_blend_bucket.file(f"blend-{blend_key}.blend").read()
-
-  with open("input.blend", "wb") as f:
-    f.write(blend_file)
-
-  bpy.ops.wm.open_mainfile(filepath="input.blend")
-
-  try:
-    raw_metadata = await readable_blend_bucket.file(f"metadata-{blend_key}.json").read()
-  except:
-    raw_metadata = {}
-
-  metadata = json.loads(raw_metadata)
-
-  bpy.context.scene.render.filepath = blend_key
-  bpy.context.scene.render.engine = metadata.get('engine', 'CYCLES')
-  bpy.context.scene.cycles.device = metadata.get('device', 'GPU')
-  bpy.context.scene.render.image_settings.file_format = metadata.get('file_format', 'PNG')
-  bpy.context.scene.render.fps = metadata.get('fps', '0')
-
-  if metadata.get('animate', False):
-    bpy.ops.render.render(animation=True)
-  else:
-    bpy.ops.render.render(write_still=True)
-
-  file_name = glob.glob(f"{blend_key}*")[0]
-  with open(file_name, "rb") as f:
-    image_bytes = f.read()    
-
-    await writeable_rendered_bucket.file(file_name).write(image_bytes)
-    
-  return ctx
 
 
 Nitric.run()
