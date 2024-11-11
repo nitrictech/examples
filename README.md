@@ -70,12 +70,13 @@ When utilizing the `nitric new` command to initiate a new project, the available
 
 ### Python
 
-| Name                                         | Description                          | Features             |
-| -------------------------------------------- | ------------------------------------ | -------------------- |
-| [python-starter](./v1/python-starter/)       | REST API Starter                     | APIs                 |
-| [auth-firebase](./v1/auth-firebase/)         | Integrate with Firebase Auth         | APIs, Auth, Frontend |
-| [python-prediction](./v1/python-prediction/) | Text Prediciton API using Tensorflow | APIs                 |
-| [scheduled-report](./v1/scheduled-report/)   | Scheduled Google Sheet Reports       | APIs, Schedules      |
+| Name                                         | Description                                     | Features             |
+| -------------------------------------------- | ----------------------------------------------- | -------------------- |
+| [python-starter](./v1/python-starter/)       | REST API Starter                                | APIs                 |
+| [auth-firebase](./v1/auth-firebase/)         | Integrate with Firebase Auth                    | APIs, Auth, Frontend |
+| [python-prediction](./v1/python-prediction/) | Text Prediciton API using Tensorflow            | APIs                 |
+| [scheduled-report](./v1/scheduled-report/)   | Scheduled Google Sheet Reports                  | APIs, Schedules      |
+| [blender-render](./v1/blender-render/)       | Render Blender Scenes remotely using Cloud GPUs | APIs, Batch, Storage |
 
 ### Dart
 

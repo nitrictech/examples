@@ -1,0 +1,19 @@
+name: blender-render
+services:
+  - match: services/main.py
+    start: uv run watchmedo auto-restart -p *.py --no-restart-on-command-exit -R python -- -u $SERVICE_PATH
+    runtime: python
+
+batch-services:
+  - match: batches/renderer.py
+    start: uv run watchmedo auto-restart -p *.py --no-restart-on-command-exit -R python -- -u $SERVICE_PATH
+    runtime: blender
+
+runtimes:
+  blender:
+    dockerfile: blender.dockerfile
+  python:
+    dockerfile: python.dockerfile
+
+preview:
+  - batch-services
