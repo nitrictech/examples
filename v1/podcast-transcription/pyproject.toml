@@ -1,0 +1,23 @@
+[project]
+name = "nitric-python-whisper-example"
+version = "0.1.0"
+description = "An example project using Nitric and Whisper to transcribe audio"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "nitric ==1.2.3",
+    "betterproto ==2.0.0b6",
+    "requests>=2.32.3",
+]
+
+[project.optional-dependencies]
+ml = [
+    "librosa>=0.10.2.post1",
+    "numpy>=2.0.2",
+    "openai-whisper>=20240930",
+]
+
+[tool.uv]
+dev-dependencies = [
+    "watchdog>=5.0.3",
+]

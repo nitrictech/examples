@@ -1,0 +1,18 @@
+name: translate
+services:
+  - match: src/services/api.py
+    runtime: python
+    start: uv run watchmedo auto-restart -p *.py --no-restart-on-command-exit -R python -- -u $SERVICE_PATH
+
+batch-services:
+  - match: batches/transcribe.py
+    runtime: transcribe
+    start: uv run watchmedo auto-restart -p *.py --no-restart-on-command-exit -R python -- -u $SERVICE_PATH
+runtimes:
+  python:
+    dockerfile: python.dockerfile
+  transcribe:
+    dockerfile: transcribe.dockerfile
+
+preview:
+  - batch-services
