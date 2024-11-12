@@ -1,7 +1,7 @@
 [project]
-name = "python-uv-starter"
+name = "nitric-python-whisper-example"
 version = "0.1.0"
-description = "Add your description here"
+description = "An example project using Nitric and Whisper to transcribe audio"
 readme = "README.md"
 requires-python = ">=3.11"
 dependencies = [

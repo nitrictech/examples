@@ -6,9 +6,8 @@ ENV HANDLER=${HANDLER}
 
 ENV UV_COMPILE_BYTECODE=1 UV_LINK_MODE=copy PYTHONPATH=.
 WORKDIR /app
+COPY uv.lock pyproject.toml /app/
 RUN --mount=type=cache,target=/root/.cache/uv \
-  --mount=type=bind,source=uv.lock,target=uv.lock \
-  --mount=type=bind,source=pyproject.toml,target=pyproject.toml \
   uv sync --frozen -v --no-install-project --extra ml --no-dev --no-python-downloads
 COPY . /app
 RUN --mount=type=cache,target=/root/.cache/uv \
@@ -32,7 +31,7 @@ RUN apt-get update -y && \
   ln -sf /usr/bin/python3.11 /usr/local/bin/python3.11
 
 # Copy the application from the builder
-COPY --from=builder --chown=app:app /app /app
+COPY --from=builder /app /app
 WORKDIR /app
 
 # Place executables in the environment at the front of the path
