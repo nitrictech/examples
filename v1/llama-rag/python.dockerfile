@@ -1,5 +1,5 @@
 # The python version must match the version in .python-version
-FROM ghcr.io/astral-sh/uv:python3.11-bookworm-slim AS builder
+FROM ghcr.io/astral-sh/uv:python3.11-bookworm AS builder
 
 ARG HANDLER
 ENV HANDLER=${HANDLER}
@@ -15,7 +15,7 @@ RUN --mount=type=cache,target=/root/.cache/uv \
 
 
 # Then, use a final image without uv
-FROM python:3.11-slim-bookworm
+FROM python:3.11-bookworm
 
 ARG HANDLER
 ENV HANDLER=${HANDLER} PYTHONPATH=.

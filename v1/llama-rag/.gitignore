@@ -1,6 +1,6 @@
 .nitric/
 .venv/
-__pycache__
-models/
-local-query-engine/
 nitric-spec.json
+__pycache__
+model/
+query_engine_vectors/

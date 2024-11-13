@@ -1,9 +1,8 @@
-from common.model import llm, embed_model
+from common.model_parameters import llm, embed_model, persist_dir
 
 from llama_index.core import SimpleDirectoryReader, VectorStoreIndex, Settings
 
-input_dir_path = "../docs/docs/"
-persist_dir = "local-query-engine"
+input_dir_path = "..."
 
 Settings.llm = llm
 Settings.embed_model = embed_model
