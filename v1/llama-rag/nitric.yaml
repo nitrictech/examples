@@ -1,0 +1,9 @@
+name: llama-rag
+services:
+  - basedir: ""
+    match: services/*.py
+    runtime: python
+    start: uv run watchmedo auto-restart -p *.py --no-restart-on-command-exit -R uv run $SERVICE_PATH
+runtimes:
+  python:
+    dockerfile: ./python.dockerfile

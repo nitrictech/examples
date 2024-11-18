@@ -1,0 +1,19 @@
+[project]
+name = "llama-rag"
+version = "0.1.0"
+description = "Use Retrieval Augmented Generation (RAG) with a Llama 3.2 model"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "nitric ==1.2.3",
+    "betterproto ==2.0.0b6",
+    "llama-index>=0.11.22",
+    "llama-index-embeddings-huggingface>=0.3.1",
+    "llama-index-llms-ollama>=0.3.6",
+    "llama-index-llms-llama-cpp>=0.2.3",
+]
+
+[tool.uv]
+dev-dependencies = [
+    "watchdog>=5.0.3",
+]
