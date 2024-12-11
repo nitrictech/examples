@@ -4,7 +4,7 @@
   "description": "nitric typescript starter template",
   "private": true,
   "dependencies": {
-    "@nitric/sdk": "^1.3.0",
+    "@nitric/sdk": "^1.3.1",
     "@prisma/client": "^5.15.0",
     "prisma": "^5.15.0"
   },
