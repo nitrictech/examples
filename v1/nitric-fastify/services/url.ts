@@ -1,11 +1,11 @@
 import Fastify from "fastify";
-import { http, bucket, NodeApplication } from "@nitric/sdk";
+import { http, bucket } from "@nitric/sdk";
 
 const fastify = Fastify({
   logger: true,
 });
 
-export const imgBucket = bucket("images").for("reading", "writing");
+export const imgBucket = bucket("images").allow("read", "write");
 
 interface Params {
   id: string;

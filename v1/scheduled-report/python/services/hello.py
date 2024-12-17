@@ -1,7 +1,7 @@
 import os
 from nitric.resources import api, schedule
 from nitric.application import Nitric
-from nitric.context import HttpContext, IntervalContext, HttpMiddleware
+from nitric.context import IntervalContext
 
 from helpers.google import create_spreadsheet, generate_dummy_data, insert_data_into_spreadsheet, service_login, share_spreadsheet
 

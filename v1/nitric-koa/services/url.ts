@@ -2,7 +2,7 @@ import Koa from "koa";
 import Router from "koa-router";
 import { http, bucket } from "@nitric/sdk";
 
-export const imgBucket = bucket("images").for("reading", "writing");
+export const imgBucket = bucket("images").allow("read", "write");
 
 const app = new Koa();
 const router = new Router();

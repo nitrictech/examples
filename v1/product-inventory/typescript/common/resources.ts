@@ -9,19 +9,19 @@ export const rekognition = new RekognitionClient({
 });
 
 // KV Stores
-export const products = kv("products").for("setting", "getting");
+export const products = kv("products").allow("get", "set");
 
 // API
 export const inventoryApi = api("inventory");
 
 // Topics
-export const inventoryPub = topic("topic").for("publishing");
+export const inventoryPub = topic("topic").allow("publish");
 
 export const inventorySub = topic("topic");
 
 // Buckets
 export const bucketName = "images";
-export const imageBucket = bucket(bucketName).for("reading", "writing");
+export const imageBucket = bucket(bucketName).allow("read", "write");
 
 export const recognize = async (name: string) => {
   const command = new DetectLabelsCommand({

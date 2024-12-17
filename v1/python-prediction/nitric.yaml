@@ -1,4 +1,12 @@
 name: python-prediction
 services:
-  - match: services/*.py
+  - basedir: ""
+    match: services/*.py
+    runtime: python
     start: pipenv run dev $SERVICE_PATH
+batch-services: []
+runtimes:
+  python:
+    dockerfile: ./python.dockerfile
+    context: ""
+    args: {}

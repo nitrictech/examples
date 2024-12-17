@@ -28,7 +28,8 @@ You'll also want to make sure the project's required dependencies have been inst
 
 ```bash
 # install dependencies
-dart pub get
+flutter clean
+flutter pub get
 
 # run locally
 nitric start

@@ -1,4 +1,12 @@
 name: cloudflare-lb
 services:
-  - match: services/*.ts
+  - basedir: ""
+    match: services/*.ts
+    runtime: node
     start: npm run dev:services $SERVICE_PATH
+batch-services: []
+runtimes:
+  node:
+    dockerfile: ./node.dockerfile
+    context: ""
+    args: {}
