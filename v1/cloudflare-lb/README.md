@@ -18,9 +18,7 @@
 
 ## Project Description
 
-This project demonstrates how to combine the power of an auto-scaling api with an auto-scaling db.
-
-Neon is a fully managed serverless PostgreSQL. Neon separates storage and compute and offers modern developer features such as serverless, branching, bottomless storage, and more.
+This project demonstrates how to load balance the same application across multiple clouds with Nitric and Cloudflare.
 
 ## Usage
 

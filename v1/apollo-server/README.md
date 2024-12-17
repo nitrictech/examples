@@ -34,6 +34,16 @@ Follow the steps in the [installation guide](https://nitric.io/docs/installation
 nitric start
 ```
 
+Navigate to 'http://localhost:4001/' to access your Apollo server, where you can run an example GraphQL query.
+
+```
+query ExampleQuery {
+  books {
+    author
+  }
+}
+```
+
 ### Step 3:
 
 Configure the region in nitric.aws.yaml and ensure you've got local AWS credentials to deploy your application.

@@ -1,7 +1,7 @@
 import { websocket, kv } from "@nitric/sdk";
 
 // Initialize KV store for connections and a WebSocket
-const kvStore = kv("connections").for("getting", "setting", "deleting");
+const kvStore = kv("connections").allow("get", "set", "delete");
 const socket = websocket("example-websocket");
 
 // Handle new connections

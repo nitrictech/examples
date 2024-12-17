@@ -11,7 +11,7 @@ async function bootstrap(port: number) {
   });
 }
 
-export const imgBucket = bucket("images").for("reading", "writing");
+export const imgBucket = bucket("images").allow("read", "write");
 
 app.get("/upload/:id", async (c) => {
   try {

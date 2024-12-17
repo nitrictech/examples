@@ -1,0 +1,4 @@
+name: python-starter
+services:
+  - match: services/*.py
+    start: pipenv run dev $SERVICE_PATH

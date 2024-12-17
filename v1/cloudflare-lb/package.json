@@ -19,6 +19,8 @@
   },
   "scripts": {
     "deploy:lb": "ts-node ./infra/up.ts",
-    "destroy:lb": "ts-node ./infra/down.ts"
+    "destroy:lb": "ts-node ./infra/down.ts",
+    "dev:services": "nodemon -r dotenv/config"
+
   }
 }

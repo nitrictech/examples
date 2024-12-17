@@ -2,7 +2,7 @@
 
 ## About Nitric
 
-> ⚠️ Note: This repo contains features that require a minimum nitric CLI version of [1.52.0](https://github.com/nitrictech/cli/releases/tag/v1.52.0)
+> ⚠️ Note: This repo contains features that requires a minimum nitric CLI version of [1.52.0](https://github.com/nitrictech/cli/releases/tag/v1.52.0)
 
 This is a [Nitric](https://nitric.io) Golang project, but Nitric is a framework for rapid development of cloud-native and serverless applications in many languages.
 
@@ -29,7 +29,12 @@ To run this project you'll need the [Nitric CLI](https://nitric.io/docs/installa
 
 ```bash
 # install dependencies
+cd go
 go mod tidy
+
+cd..
+cd ts
+npm install
 
 # run locally
 nitric start
