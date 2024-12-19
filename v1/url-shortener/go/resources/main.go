@@ -4,12 +4,13 @@ import (
 	"sync"
 
 	"github.com/nitrictech/go-sdk/nitric"
+	"github.com/nitrictech/go-sdk/nitric/apis"
+	"github.com/nitrictech/go-sdk/nitric/keyvalue"
 )
 
 type Resource struct {
-	MainApi     nitric.Api
-	UrlKvStore  nitric.KvStore
-	NotifyTopic nitric.SubscribableTopic
+	MainApi    apis.Api
+	UrlKvStore keyvalue.KvStore
 }
 
 var (
@@ -19,15 +20,11 @@ var (
 
 func Get() *Resource {
 	resourceOnce.Do(func() {
-		mainApi, err := nitric.NewApi("main")
-		if err != nil {
-			panic(err)
-		}
+		mainApi := nitric.NewApi("main")
 
 		resource = &Resource{
-			MainApi:     mainApi,
-			UrlKvStore:  nitric.NewKv("urls"),
-			NotifyTopic: nitric.NewTopic("notify"),
+			MainApi:    mainApi,
+			UrlKvStore: nitric.NewKv("urls"),
 		}
 	})
 

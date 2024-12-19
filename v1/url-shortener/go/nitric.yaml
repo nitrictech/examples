@@ -1,10 +1,12 @@
-name: url-shortener-5
+name: url-shortner
 services:
-  - match: services/*
-    runtime: go
-    type: ""
-    start: go run ./$SERVICE_PATH/...
+    - basedir: ""
+      match: services/*
+      runtime: go
+      start: go run ./$SERVICE_PATH/...
+batch-services: []
 runtimes:
-  go:
-    dockerfile: ./golang.dockerfile
-    args: {}
+    go:
+        dockerfile: ./golang.dockerfile
+        context: ""
+        args: {}
