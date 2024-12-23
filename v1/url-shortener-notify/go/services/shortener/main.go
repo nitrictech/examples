@@ -11,6 +11,7 @@ import (
 	"github.com/nitrictech/go-sdk/nitric"
 	"github.com/nitrictech/go-sdk/nitric/apis"
 	"github.com/nitrictech/go-sdk/nitric/keyvalue"
+	"github.com/nitrictech/go-sdk/nitric/topics"
 	"github.com/nitrictech/templates/go-starter/resources"
 )
 
@@ -31,6 +32,8 @@ func main() {
 	// Initialize the resources defined in resources.go
 	urlKvStore := resources.Get().UrlKvStore.Allow(keyvalue.KvStoreSet, keyvalue.KvStoreGet)
 
+	topicPublish := resources.Get().NotifyTopic.Allow(topics.TopicPublish)
+
 	// POST /shorten - Shorten a given URL
 	resources.Get().MainApi.Post("/shorten", func(ctx *apis.Ctx) {
 		err := json.Unmarshal(ctx.Request.Data(), &shortenData)
@@ -49,6 +52,16 @@ func main() {
 			ctx.Response.Status = 500
 			ctx.Response.Body = []byte("Error shortening URL")
 			return
+		}
+
+		// notify the topic
+		err = topicPublish.Publish(context.Background(), map[string]interface{}{
+			"shortCode": shortCode,
+			"url":       shortenData.Url,
+		})
+		if err != nil {
+			ctx.Response.Status = 500
+			ctx.Response.Body = []byte("Error notifying topic")
 		}
 
 		// Extract the origin from headers (for demonstration), then return the short URL
