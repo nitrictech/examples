@@ -1,0 +1,12 @@
+name: url-shortner
+services:
+    - basedir: ""
+      match: services/*
+      runtime: go
+      start: go run ./$SERVICE_PATH/...
+batch-services: []
+runtimes:
+    go:
+        dockerfile: ./golang.dockerfile
+        context: ""
+        args: {}
