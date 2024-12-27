@@ -1,22 +1,16 @@
-<p align="center">
-  <a href="https://nitric.io">
-    <img src="https://raw.githubusercontent.com/nitrictech/nitric/main/docs/assets/nitric-logo.svg" width="120" alt="Nitric Logo"/>
-  </a>
-</p>
+<p align="center"><a href="https://nitric.io" target="_blank"><img src="https://raw.githubusercontent.com/nitrictech/nitric/main/docs/assets/nitric-logo.svg" height="120"></a></p>
 
-<p align="center">
-  A fast & fun way to build portable cloud-native applications
-</p>
+# Firebase Auth Project
 
-<p align="center">
-  <img alt="GitHub release (latest SemVer)" src="https://img.shields.io/github/v/release/nitrictech/nitric?sort=semver">
-  <a href="https://twitter.com/nitric_io">
-    <img alt="Twitter Follow" src="https://img.shields.io/twitter/follow/nitric_io?label=Follow&style=social">
-  </a>
-  <a href="https://nitric.io/chat"><img alt="Discord" src="https://img.shields.io/discord/955259353043173427?label=discord"></a>
-</p>
+## About Nitric
 
-## Project Description
+This is a [Nitric](https://nitric.io) Python project, but Nitric is a framework for rapid development of cloud-native and serverless applications in many languages.
+
+## Learning Nitric
+
+Nitric provides [documentation](https://nitric.io/docs) and [guides](https://nitric.io/docs/guides?langs=python) to help you get started quickly.
+
+If can also join [Discord](https://nitric.io/chat) to chat with the community, or view the project on [GitHub](https://github.com/nitrictech/nitric).
 
 Verify Firebase ID Tokens with Nitric API middleware.
 
@@ -51,7 +45,7 @@ Add Google as a Sign-in method in your Firebase project. This is in the [Firebas
 ### Step 4: Run your Nitric project locally
 
 ```bash
-pipenv install --dev
+uv sync
 nitric start
 ```
 
@@ -90,6 +84,9 @@ We're completely open-source and encourage [code contributions](https://nitric.i
 ## Get in touch
 
 - Ask questions in [GitHub discussions](https://github.com/nitrictech/nitric/discussions)
+
+- Join our [Discord](https://nitric.io/chat) to chat with the community
+
 - Find us on [Twitter](https://twitter.com/nitric_io)
+
 - Send us an [email](mailto:maintainers@nitric.io)
-- Jump into our [Discord server](https://nitric.io/chat)

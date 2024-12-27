@@ -1,2 +1,6 @@
 .nitric/
+.venv
 .idea/
+__pycache__
+tokenier.pickle
+model.keras

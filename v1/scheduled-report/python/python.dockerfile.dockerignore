@@ -1,0 +1,6 @@
+.mypy_cache/
+.nitric/
+.venv/
+nitric-spec.json
+nitric.yaml
+README.md

@@ -1,0 +1,4 @@
+.nitric/
+.venv/
+__pycache__
+nitric-spec.json
