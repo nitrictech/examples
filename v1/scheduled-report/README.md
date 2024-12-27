@@ -30,8 +30,7 @@ Follow the steps in the [installation guide](https://nitric.io/docs/installation
 
 ```bash
 nitric new reports py-starter
-pipenv install google-auth google-api-python-client
-pipenv install --dev
+uv add google-auth google-api-python-client
 ```
 
 ### Step 3: Creating your credentials file in the Google Cloud Console
@@ -79,6 +78,8 @@ We're completely open-source and encourage [code contributions](https://nitric.i
 ## Get in touch
 
 - Ask questions in [GitHub discussions](https://github.com/nitrictech/nitric/discussions)
+
+- Join our [Discord](https://nitric.io/chat) to chat with the community
 
 - Find us on [Twitter](https://twitter.com/nitric_io)
 

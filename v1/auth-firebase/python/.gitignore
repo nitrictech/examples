@@ -1,1 +1,3 @@
 .nitric/
+.venv
+__pycache__

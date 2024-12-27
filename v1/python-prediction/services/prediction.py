@@ -71,11 +71,12 @@ def predict_text(seed_text: str) -> list[str]:
 
 @mainApi.get("/prediction")
 async def hello_world(ctx):
-    print("processing prompt")
     prompt = ctx.req.query.get("prompt")
 
     if prompt is None:
-        return
+        ctx.res.status = 400
+        ctx.res.body = "empty query parameter 'prompt' supplied"
+        return ctx
 
     prompt = " ".join(prompt)
 

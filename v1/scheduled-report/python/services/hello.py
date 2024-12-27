@@ -1,5 +1,5 @@
 import os
-from nitric.resources import api, schedule
+from nitric.resources import schedule
 from nitric.application import Nitric
 from nitric.context import IntervalContext
 
@@ -17,8 +17,6 @@ async def process_transactions(ctx: IntervalContext):
     insert_data_into_spreadsheet(spreadsheet_id, dummy_data, sheets_service)
 
     share_spreadsheet(spreadsheet_id, os.getenv('ADMIN_EMAIL'), drive_service)
-
-main = api("main")
 
 
 Nitric.run()
