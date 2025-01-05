@@ -56,9 +56,9 @@ We're completely open-source and encourage [code contributions](https://nitric.i
 
 ## Get in touch
 
-- Jump into our [Discord server](https://nitric.io/chat)
-
 - Ask questions in [GitHub discussions](https://github.com/nitrictech/nitric/discussions)
+
+- Join our [Discord](https://nitric.io/chat) to chat with the community
 
 - Find us on [Twitter](https://twitter.com/nitric_io)
 

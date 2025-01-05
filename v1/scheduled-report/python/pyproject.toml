@@ -1,0 +1,17 @@
+[project]
+name = "scheduled-report"
+version = "0.1.0"
+description = "Schedule reports using Nitric and the Google Sheets client library"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "nitric ==1.2.3",
+    "betterproto ==2.0.0b6",
+    "google-auth>=2.37.0",
+    "google-api-python-client>=2.156.0",
+]
+
+[tool.uv]
+dev-dependencies = [
+    "watchdog>=5.0.3",
+]

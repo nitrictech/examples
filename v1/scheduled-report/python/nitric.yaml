@@ -1,4 +1,8 @@
 name: python-starter
 services:
   - match: services/*.py
-    start: pipenv run dev $SERVICE_PATH
+    start: uv run watchmedo auto-restart -p *.py --no-restart-on-command-exit -R uv run $SERVICE_PATH
+    runtime: python
+runtimes:
+  python:
+    dockerfile: "./python.dockerfile"
