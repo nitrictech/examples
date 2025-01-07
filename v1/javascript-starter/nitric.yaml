@@ -3,8 +3,7 @@ services:
   - match: ./services/*.js
     start: npm run dev:services $SERVICE_PATH
     runtime: node
-
-runtime:
+runtimes:
   node:
     dockerfile: ./node.dockerfile
     args: {}
