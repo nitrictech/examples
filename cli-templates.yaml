@@ -9,7 +9,7 @@ templates:
     label: TypeScript - Starter (Deno)
     desc: A simple REST API using Deno
     path: ./v1/typescript-starter-deno
-  - name: js-starter (Node)
+  - name: js-starter
     label: JavaScript - Starter
     desc: A simple REST API
     path: ./v1/javascript-starter
