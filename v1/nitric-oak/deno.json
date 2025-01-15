@@ -1,0 +1,7 @@
+{
+  "imports": {
+    "@nitric/sdk": "npm:@nitric/sdk@^1.3.3",
+    "@oak/oak": "jsr:@oak/oak@^17.1.4"
+  },
+  "nodeModulesDir": "auto"
+}
