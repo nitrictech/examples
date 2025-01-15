@@ -15,8 +15,6 @@ router.get("/upload/:id", async (ctx) => {
 
     ctx.response.type = "application/json";
     ctx.response.body = { url: await img.getUploadUrl() };
-
-    return ctx;
   } catch (_err) {
     ctx.response.status = 500;
     ctx.response.body = "Error getting file URL";
