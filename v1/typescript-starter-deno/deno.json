@@ -1,6 +1,6 @@
 {
   "imports": {
-    "@nitric/sdk": "npm:@nitric/sdk@^1.3.0"
+    "@nitric/sdk": "npm:@nitric/sdk@^1.3.3"
   },
   "nodeModulesDir": "auto"
 }
