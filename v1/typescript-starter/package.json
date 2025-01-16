@@ -15,5 +15,6 @@
   },
   "scripts": {
     "dev:services": "nodemon -r dotenv/config"
-  }
+  },
+  "packageManager": "npm@9.6.5+sha512.d1262cf65cf5343ed5dfe2f3e846ec9d4759e0ec6340e1db68829d59df0e82c6d9da1082d997a25cc11a0443c45416882d6fa1b85034a49d58304fb9da2648e6"
 }
