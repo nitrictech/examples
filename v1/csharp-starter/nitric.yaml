@@ -1,0 +1,10 @@
+name: csharp-starter
+services:
+  - match: services/**/*.csproj
+    start: dotnet run --project $SERVICE_PATH
+    runtime: dotnet
+
+runtimes:
+  dotnet:
+    dockerfile: ./dotnet.dockerfile
+    args: {}
