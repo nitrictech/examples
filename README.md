@@ -99,6 +99,10 @@ When utilizing the `nitric new` command to initiate a new project, the available
 | [url-shortener](./v1/url-shortener/) | URL Shortener with Pub/Sub | APIs, Topics, Key Value Stores     |
 | [websocket-app](./v1/websocket-app/) | A basic websockets example | APIs, WebSockets, Key Value Stores |
 
+### C#
+
+| [dotnet-starter](./v1/dotnet-starter/) | .NET REST API Starter | APIs |
+
 ### Websites
 
 | Name                                         | Description                                   | Features |
