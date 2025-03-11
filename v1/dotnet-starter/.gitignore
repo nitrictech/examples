@@ -1,0 +1,6 @@
+.nitric/
+bin
+obj
+Nuget.config
+.vs
+nitric-spec.json

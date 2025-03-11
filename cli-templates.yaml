@@ -29,3 +29,7 @@ templates:
     label: Go - Starter
     desc: A simple REST API
     path: ./v1/go-starter
+  - name: csharp-starter
+    label: C# - Starter
+    desc: A simple REST API
+    path: ./v1/dotnet-starter
