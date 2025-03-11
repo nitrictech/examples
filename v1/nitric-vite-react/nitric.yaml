@@ -1,0 +1,22 @@
+name: nitric-vite-react
+services:
+  - basedir: ""
+    match: services/*.ts
+    runtime: node
+    start: npm run dev:services $SERVICE_PATH
+batch-services: []
+websites:
+  - basedir: ./main-website
+    build:
+      command: npm run build
+      output: dist
+    dev:
+      command: npm run dev -- --port 3000
+      url: http://localhost:3000
+runtimes:
+  node:
+    dockerfile: ./node.dockerfile
+    context: ""
+    args: {}
+preview:
+  - websites

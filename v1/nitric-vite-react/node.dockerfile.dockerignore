@@ -1,0 +1,11 @@
+.nitric/
+.git/ 
+.idea/ 
+.vscode/ 
+.github/ 
+*.dockerfile 
+*.dockerignore
+node_modules/
+README.md
+
+main-website/
