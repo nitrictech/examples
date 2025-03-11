@@ -97,6 +97,12 @@ When utilizing the `nitric new` command to initiate a new project, the available
 | [url-shortener](./v1/url-shortener/) | URL Shortener with Pub/Sub | APIs, Topics, Key Value Stores     |
 | [websocket-app](./v1/websocket-app/) | A basic websockets example | APIs, WebSockets, Key Value Stores |
 
+### Websites
+
+| Name                                         | Description                                   | Features |
+| -------------------------------------------- | --------------------------------------------- | -------- |
+| [nitric-vite-react](./v1/nitric-vite-react/) | Nitric TypeScript with a React static website | Websites |
+
 ## About Nitric
 
 [Nitric](https://nitric.io) is a framework for rapid development of cloud-native and serverless applications in many languages.

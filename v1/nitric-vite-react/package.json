@@ -1,0 +1,19 @@
+{
+  "name": "typescript-starter",
+  "version": "1.0.0",
+  "description": "nitric typescript starter template",
+  "private": true,
+  "dependencies": {
+    "@nitric/sdk": "^1.3.3"
+  },
+  "devDependencies": {
+    "@types/node": "^22.1.0",
+    "dotenv": "^16.4.5",
+    "nodemon": "^3.1.4",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.5.4"
+  },
+  "scripts": {
+    "dev:services": "nodemon -r dotenv/config"
+  }
+}
