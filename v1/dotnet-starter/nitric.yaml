@@ -1,7 +1,7 @@
 name: csharp-starter
 services:
   - match: services/**/*.csproj
-    start: dotnet run --project $SERVICE_PATH
+    start: dotnet watch --non-interactive --project $SERVICE_PATH
     runtime: dotnet
 
 runtimes:
