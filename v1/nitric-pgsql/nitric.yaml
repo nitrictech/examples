@@ -1,0 +1,15 @@
+name: nitric-pgsql
+services:
+  - basedir: ""
+    match: services/*.ts
+    runtime: node
+    start: npm run dev:services $SERVICE_PATH
+batch-services: []
+websites: []
+runtimes:
+  node:
+    dockerfile: ./node.dockerfile
+    context: ""
+    args: {}
+preview:
+  - sql-databases
