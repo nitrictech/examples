@@ -7,6 +7,8 @@ services:
 batch-services: []
 websites:
   - basedir: ./main-website
+    # Since this is a Single Page Application (SPA), we need to redirect all requests to the index.html file.
+    error: index.html
     build:
       command: npm run build
       output: dist
