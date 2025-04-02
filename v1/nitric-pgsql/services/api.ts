@@ -12,10 +12,10 @@ mainApi.get("/todos", async (ctx) => {
 
 // Insert a new todo
 mainApi.post("/todos/", async (ctx) => {
-  const { text } = ctx.req.json();
+  const { content } = ctx.req.json();
   const client = await getClient();
-  await client.query("INSERT INTO todos (text, done) VALUES ($1, $2)", [
-    text,
+  await client.query("INSERT INTO todos (content, done) VALUES ($1, $2)", [
+    content,
     false,
   ]);
 });
@@ -23,10 +23,10 @@ mainApi.post("/todos/", async (ctx) => {
 // update text of a todo
 mainApi.patch("/todos/:id", async (ctx) => {
   const { id } = ctx.req.params;
-  const { text } = ctx.req.json();
+  const { content } = ctx.req.json();
   const client = await getClient();
-  await client.query("UPDATE todos SET text = $1 WHERE id = $2", [
-    text,
+  await client.query("UPDATE todos SET content = $1 WHERE id = $2", [
+    content,
     parseInt(id),
   ]);
 });
