@@ -81,6 +81,7 @@ When utilizing the `nitric new` command to initiate a new project, the available
 | [blender-render](./v1/blender-render/)               | Render Blender Scenes remotely using Cloud GPUs               | APIs, Batch, Storage |
 | [podcast-transcription](./v1/podcast-transcription/) | Transcribe audio files using OpenAI Whisper                   | APIs, Batch, Storage |
 | [llama-rag](./v1/llama-rag/)                         | Use Retrieval Augmented Generation (RAG) to enhance your LLMs | APIs, Storage        |
+| [python-debuypy](./v1/python-debuypy/)               | How to attach `debuypy` debugger to one or more services      | APIs                 |
 
 ### Dart
 
