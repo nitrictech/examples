@@ -1,0 +1,45 @@
+{
+    "version": "0.2.0",
+    "compounds": [
+      {
+        "name": "Attach to Both Services",
+        "configurations": [
+          "Python Debugger: Service 1",
+          "Python Debugger: Service 2"
+        ]
+      }
+    ],
+    "configurations": [
+      {
+        "name": "Python Debugger: Service 1",
+        "type": "debugpy",
+        "request": "attach",
+        "connect": {
+          "host": "localhost",
+          "port": 52509
+        },
+        "pathMappings": [
+          {
+            "localRoot": "${workspaceFolder}",
+            "remoteRoot": "."
+          }
+        ]
+      },
+      {
+        "name": "Python Debugger: Service 2",
+        "type": "debugpy",
+        "request": "attach",
+        "connect": {
+          "host": "localhost",
+          "port": 52510
+        },
+        "pathMappings": [
+          {
+            "localRoot": "${workspaceFolder}",
+            "remoteRoot": "."
+          }
+        ]
+      }
+    ]
+  }
+  
