@@ -1,0 +1,23 @@
+name: survey-application
+services:
+  - basedir: ""
+    match: services/*.ts
+    runtime: node
+    start: npm run dev:services $SERVICE_PATH
+batch-services: []
+websites:
+  - basedir: ./main-website
+    error: index.html
+    build:
+      command: npm run build
+      output: dist
+    dev:
+      command: npm run dev -- --port 3001
+      url: http://localhost:3001
+runtimes:
+  node:
+    dockerfile: ./node.dockerfile
+    context: ""
+    args: {}
+preview:
+  - websites
