@@ -56,6 +56,7 @@ When utilizing the `nitric new` command to initiate a new project, the available
 | [neon-tasklist](./v1/neon-tasklist/)                     | Create a task list with a Neon pg database.                                                         | APIs, SQL Database                                      |
 | [cloudflare-lb](./v1/cloudflare-lb/)                     | Deploy a multi-cloud application with a cloudflare loadbalanced application                         | APIs, Multi-Cloud                                       |
 | [surveys-auth0](./v1/surveys-auth0/)                     | A survey app with NextJS frontend with and without Auth0 integration to save and resume application | APIs, Topics, Key Value Stores, Storage, Auth, Frontend |
+| [surveys-website](./v1/surveys-application/)             | A survey app with a configured Nitric website                                                       |
 | [nitric-drizzle](./v1/nitric-drizzle/)                   | A PostgreSQL Database using Drizzle ORM deployed with AWS                                           | APIs, SQL Database                                      |
 | [nitric-prisma](./v1/nitric-prisma/)                     | A PostgreSQL Database using Prisma ORM deployed with AWS                                            | APIs, SQL Database                                      |
 | [nitric-pgsql](./v1/nitric-pgsql/)                       | A PostgreSQL Database using the pg client for Node.js                                               | APIs, SQL Database                                      |
